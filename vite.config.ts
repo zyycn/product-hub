@@ -17,7 +17,8 @@ export default defineConfig({
       htmlMinify: true,
       verbose: false,
       template: 'config/mpa-template.html',
-      pages
+      pages,
+      rewrites: [{ from: /^(?!.*\.html$).*/, to: () => '/index.html' }] // 不带html结尾的默认路由到index页
     }),
     viteCompression({
       verbose: false,
