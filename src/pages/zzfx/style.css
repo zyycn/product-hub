@@ -1,0 +1,10 @@
+.cm-editor {
+  max-height: 200px;
+  border: 1px solid silver;
+  font-size: 12px;
+}
+
+.cm-scroller {
+  overflow: auto;
+  font-family: 'Microsoft YaHei' !important;
+}
