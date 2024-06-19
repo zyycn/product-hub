@@ -3,4 +3,10 @@ import App from './App.vue'
 
 import 'normalize.css'
 
-createApp(App).mount('#app')
+import clientEnv from '@/plugins/client-env'
+
+const app = createApp(App)
+
+app.use(clientEnv)
+
+app.mount('#app')

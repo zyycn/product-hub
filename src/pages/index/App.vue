@@ -1,5 +1,7 @@
 <script setup lang="ts"></script>
 
-<template>项目路由</template>
+<template>
+  <div>Hello World</div>
+</template>
 
 <style scoped></style>

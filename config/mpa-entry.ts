@@ -1,4 +1,6 @@
-const pages = [
+import { Page } from 'vite-plugin-virtual-mpa'
+
+const pages: Page[] = [
   {
     name: 'index',
     entry: '/src/pages/index/main.ts',
@@ -11,4 +13,4 @@ const pages = [
   }
 ]
 
-export { pages }
+export default pages

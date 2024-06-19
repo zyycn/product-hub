@@ -35,6 +35,8 @@ export default [
 
       'prettier/prettier': 'warn',
 
+      '@typescript-eslint/no-explicit-any': 'off',
+
       // eslint（https://eslint.bootcss.com/docs/rules/）
       'no-var': 'error', // 要求使用 let 或 const 而不是 var
       'no-multiple-empty-lines': ['warn', { max: 1 }], // 不允许多个空行

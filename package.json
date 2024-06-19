@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "vue-tsc && vite build --mode production",
+    "build:test": "vite build --mode test",
     "preview": "vite preview",
     "lint": "eslint src --fix"
   },
@@ -13,6 +14,7 @@
     "@codemirror/state": "^6.4.1",
     "@codemirror/view": "^6.27.0",
     "codemirror": "^6.0.1",
+    "dayjs": "^1.11.11",
     "element-plus": "^2.7.4",
     "normalize.css": "^8.0.1",
     "pinia": "^2.1.7",
