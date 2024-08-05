@@ -1,5 +1,5 @@
-import { defineConfig, loadEnv, UserConfig } from 'vite'
 import { resolve } from 'path'
+import { defineConfig, loadEnv, UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import viteCompression from 'vite-plugin-compression'
 import { createMpaPlugin } from 'vite-plugin-virtual-mpa'

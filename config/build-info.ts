@@ -1,5 +1,5 @@
-import dayjs from 'dayjs'
 import child_process from 'child_process'
+import dayjs from 'dayjs'
 
 const GIT_COMMITHASH = child_process.execSync('git rev-parse HEAD').toString().trim()
 const GIT_COMMIT_TIME = child_process.execSync('git show -s --format=%ci').toString().trim()

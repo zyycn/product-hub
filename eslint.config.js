@@ -4,6 +4,7 @@ import tseslint from 'typescript-eslint'
 import pluginVue from 'eslint-plugin-vue'
 import configPrettier from 'eslint-config-prettier'
 import pluginPrettier from 'eslint-plugin-prettier'
+import pluginImport from 'eslint-plugin-import'
 import vueParser from 'vue-eslint-parser'
 import tsParser from '@typescript-eslint/parser'
 
@@ -27,7 +28,8 @@ export default [
       }
     },
     plugins: {
-      prettier: pluginPrettier
+      prettier: pluginPrettier,
+      import: pluginImport
     },
     rules: {
       ...configPrettier.rules,
@@ -43,7 +45,12 @@ export default [
       'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
       'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
       'no-unexpected-multiline': 'error', // 禁止空余的多行
-      'no-useless-escape': 'off' // 禁止不必要的转义字符
+      'no-useless-escape': 'off', // 禁止不必要的转义字符
+
+      // 导入规则
+      'import/first': 'error', // 确保所有导入出现在其他语句之前
+      'import/no-duplicates': 'error',
+      'import/order': 'error' // 导入排序
     }
   }
 ]

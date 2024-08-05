@@ -16,8 +16,15 @@
 import { EditorView, minimalSetup, basicSetup } from 'codemirror'
 import { EditorState } from '@codemirror/state'
 import { javascript } from '@codemirror/lang-javascript'
-import { MatchDecorator, WidgetType, keymap, placeholder } from '@codemirror/view'
-import { Decoration, ViewPlugin, ViewUpdate } from '@codemirror/view'
+import {
+  MatchDecorator,
+  WidgetType,
+  keymap,
+  placeholder,
+  Decoration,
+  ViewPlugin,
+  ViewUpdate
+} from '@codemirror/view'
 import { defaultKeymap, insertTab, standardKeymap } from '@codemirror/commands'
 
 let codeMirror = ref(null)
