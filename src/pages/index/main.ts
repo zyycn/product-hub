@@ -3,10 +3,10 @@ import App from './App.vue'
 
 import 'normalize.css'
 
-import clientEnv from '@/plugins/client-env'
+import ProdConsole from '@/plugins/prod-console'
 
 const app = createApp(App)
 
-app.use(clientEnv)
+app.use(ProdConsole)
 
 app.mount('#app')

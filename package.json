@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "@codemirror/state": "^6.4.1",
-    "@codemirror/view": "^6.29.1",
+    "@codemirror/view": "^6.30.0",
+    "@vueuse/core": "^10.11.0",
     "axios": "^1.7.3",
     "codemirror": "^6.0.1",
     "dayjs": "^1.11.12",
@@ -22,7 +23,7 @@
     "pinia": "^2.2.0",
     "qs": "^6.13.0",
     "vue": "^3.4.35",
-    "vue-draggable-plus": "^0.5.2",
+    "vue-draggable-plus": "^0.5.3",
     "vue-router": "^4.4.2"
   },
   "devDependencies": {
