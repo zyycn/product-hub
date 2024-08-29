@@ -9,9 +9,9 @@ NProgress.configure({
 
 NProgress.start()
 
-const nprogressController = (router: Router, title: string) => {
+const nprogressController = (router: Router) => {
   router.beforeEach(async (to, _from, next) => {
-    if (title && to.meta.title) document.title = to.meta.title as string
+    if (to.meta.title) document.title = to.meta.title as string
 
     NProgress.start()
     next()
@@ -23,7 +23,7 @@ const nprogressController = (router: Router, title: string) => {
 }
 
 export default {
-  install({ router, title } = { router: {} as Router, title: '' }) {
-    nprogressController(router, title)
+  install(_app: App, router: Router) {
+    nprogressController(router)
   }
 }
