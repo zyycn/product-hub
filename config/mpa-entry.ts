@@ -7,9 +7,9 @@ const pages: Page[] = [
     data: { title: '项目路由' }
   },
   {
-    name: 'zzfx',
-    entry: '/src/pages/zzfx/main.ts',
-    data: { title: '自助分析平台' }
+    name: 'ops-tools',
+    entry: '/src/pages/ops-tools/main.ts',
+    data: { title: '运维工具' }
   }
 ]
 

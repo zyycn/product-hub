@@ -1,16 +1,7 @@
-<script setup lang="ts">
-import dayjs from 'dayjs'
-import TEST from './components/TEST.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div>
-    <span>Hello World</span>
-
-    <TEST />
-
-    {{ dayjs().format('YYYY-MM-DD HH:mm:ss') }}
-  </div>
+  <div>index</div>
 </template>
 
 <style scoped></style>

@@ -1,16 +1,20 @@
 import { resolve } from 'path'
-import { defineConfig, loadEnv, UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import AutoImport from 'unplugin-auto-import/vite'
+import { defineConfig, loadEnv, UserConfig } from 'vite'
+import checker from 'vite-plugin-checker'
 import viteCompression from 'vite-plugin-compression'
 import { createMpaPlugin } from 'vite-plugin-virtual-mpa'
-import mpaEntry from './config/mpa-entry'
 import buildInfo from './config/build-info'
+import mpaEntry from './config/mpa-entry'
 
 export default defineConfig(({ mode }): UserConfig => {
   const env = loadEnv(mode, process.cwd(), '')
   return {
+    root: process.cwd(),
     define: {
-      __APP_ENV__: JSON.stringify({ ...env, ...buildInfo })
+      __APP_INFO__: JSON.stringify({ ...env, ...buildInfo }),
+      __APP_PAGES__: JSON.stringify(mpaEntry)
     },
     resolve: {
       alias: {
@@ -19,6 +23,24 @@ export default defineConfig(({ mode }): UserConfig => {
     },
     plugins: [
       vue(),
+      AutoImport({
+        imports: [
+          'vue',
+          'vue-router',
+          'pinia',
+          {
+            from: 'vue',
+            imports: ['App'],
+            type: true
+          },
+          {
+            from: 'vue-router',
+            imports: ['Router'],
+            type: true
+          }
+        ],
+        dts: 'types/auto-imports.d.ts'
+      }),
       createMpaPlugin({
         htmlMinify: true,
         verbose: false,
@@ -32,6 +54,15 @@ export default defineConfig(({ mode }): UserConfig => {
         threshold: 10240,
         algorithm: 'gzip',
         ext: '.gz'
+      }),
+      checker({
+        root: process.cwd(),
+        eslint: {
+          lintCommand: 'eslint "./src/**/*.{ts,tsx,vue}"'
+        },
+        stylelint: {
+          lintCommand: 'stylelint "**/*.{vue,css,scss}"'
+        }
       })
     ],
     build: {
@@ -46,7 +77,7 @@ export default defineConfig(({ mode }): UserConfig => {
       minify: 'terser',
       terserOptions: {
         compress: {
-          drop_console: ['log', 'warn', 'error'] as any,
+          drop_console: ['log', 'warn', 'error'],
           drop_debugger: true
         }
       }
