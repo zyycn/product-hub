@@ -4,12 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build --mode production",
+    "dev": "vite --host",
+    "build": "vue-tsc && npm run lint && npm run lint:style && vite build",
     "build:test": "vite build --mode test",
-    "preview": "vite preview",
+    "build:production": "npm run build --mode production",
+    "build:preview": "vite preview",
     "lint": "eslint src --fix",
-    "lint:style": "stylelint **/*.{vue,css,scss} --fix"
+    "lint:style": "stylelint **/*.{vue,css,scss} --fix",
+    "prepare": "husky"
   },
   "dependencies": {
     "@tsparticles/configs": "^3.5.0",
@@ -37,7 +39,10 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-vue": "^9.27.0",
     "globals": "^15.9.0",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.10",
     "meow": "^9.0.0",
+    "postcss": "^8.4.43",
     "postcss-preset-env": "^10.0.2",
     "postcss-pxtorem": "^6.1.0",
     "prettier": "^3.3.3",
@@ -57,5 +62,21 @@
     "vite-plugin-virtual-mpa": "^1.12.1",
     "vue-eslint-parser": "^9.4.3",
     "vue-tsc": "^2.1.0"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "lint-staged": {
+    "src/**/*.{vue,js,ts,jsx,tsx,json}": [
+      "npm run lint"
+    ],
+    "src/**/*.{vue,css,scss}": [
+      "npm run lint:style"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }

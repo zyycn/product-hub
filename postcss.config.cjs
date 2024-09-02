@@ -1,6 +1,19 @@
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const postcssPresetEnv = require('postcss-preset-env')
-
 module.exports = {
-  plugins: [postcssPresetEnv()]
+  plugins: [
+    require('postcss-preset-env')(),
+    require('postcss-pxtorem')({
+      rootValue: 16,
+      minPixelValue: 0,
+      propList: ['*'],
+      selectorBlackList: ['unpxtorem', 'html'],
+      exclude: file => {
+        const { sep } = require('path')
+        const { findIndex } = require('lodash')
+        const adaptivePages = require('./config/adaptive-page')
+
+        const filePath = file.split(sep).join('/')
+        return findIndex(adaptivePages, page => filePath.includes(page)) === -1
+      }
+    })
+  ]
 }

@@ -39,7 +39,11 @@ export default defineConfig(({ mode }): UserConfig => {
             type: true
           }
         ],
-        dts: 'src/types/auto-imports.d.ts'
+        dts: 'src/types/auto-imports.d.ts',
+        eslintrc: {
+          enabled: true,
+          filepath: './node_modules/.unplugin-auto-import/.eslintrc.json'
+        }
       }),
       createMpaPlugin({
         htmlMinify: true,

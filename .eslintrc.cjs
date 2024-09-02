@@ -6,15 +6,17 @@ module.exports = {
   },
   parser: 'vue-eslint-parser',
   parserOptions: {
-    parser: '@typescript-eslint/parser'
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module'
   },
   plugins: ['import', '@typescript-eslint'],
   extends: [
     'eslint:recommended',
-    'plugin:vue/vue3-recommended',
     'plugin:@typescript-eslint/strict',
     'plugin:@typescript-eslint/stylistic',
-    'plugin:prettier/recommended'
+    'plugin:vue/vue3-recommended',
+    'plugin:prettier/recommended',
+    './node_modules/.unplugin-auto-import/.eslintrc.json' // 自动导入的ESlint修复
   ],
   rules: {
     'prettier/prettier': 'warn',

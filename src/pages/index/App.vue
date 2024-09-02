@@ -1,4 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { setRootFontSize } from '@/plugins/utils'
+
+onMounted(() => {
+  console.log(1111)
+  setRootFontSize(1280, 1920)
+})
+</script>
 
 <template>
   <div class="aaa">
