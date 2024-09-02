@@ -39,7 +39,7 @@ export default defineConfig(({ mode }): UserConfig => {
             type: true
           }
         ],
-        dts: 'types/auto-imports.d.ts'
+        dts: 'src/types/auto-imports.d.ts'
       }),
       createMpaPlugin({
         htmlMinify: true,
