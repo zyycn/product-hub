@@ -3,7 +3,7 @@
     <!-- 背景 -->
     <!-- <Particles class="bg" /> -->
     <!-- 输入解锁密码 -->
-    <el-form ref="form" size="large" :model="formData" :rules="formRules" @submit.native.prevent>
+    <el-form ref="form" size="large" :model="formData" :rules="formRules" @submit.prevent>
       <el-form-item prop="password">
         <el-input
           v-model="formData.password"
@@ -58,12 +58,6 @@ export default {
       this.$nextTick(() => {
         this.$router.push({ path: '/' })
       })
-    },
-    async getPassword(password: string) {
-      const { bean } = await api.getPassword({
-        password
-      })
-      return bean
     }
   }
 }

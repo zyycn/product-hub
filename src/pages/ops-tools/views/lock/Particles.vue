@@ -9,8 +9,8 @@ import { loadSlim } from '@tsparticles/slim'
 
 export default {
   components: {
-    VueParticles: Particles(this:any, {
-      init: async (engine: any) => {
+    VueParticles: Particles(this, {
+      init: async engine => {
         await loadSlim(engine)
       }
     })
@@ -21,7 +21,7 @@ export default {
     }
   },
   methods: {
-    async particlesInit(engine: any) {
+    async particlesInit(engine) {
       await loadSlim(engine)
     }
   }

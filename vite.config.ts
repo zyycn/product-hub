@@ -42,7 +42,7 @@ export default defineConfig(({ mode }): UserConfig => {
         dts: 'src/types/auto-imports.d.ts',
         eslintrc: {
           enabled: true,
-          filepath: './node_modules/.unplugin-auto-import/.eslintrc.json'
+          filepath: './node_modules/.unplugin-auto-import/.eslintrc.mjs'
         }
       }),
       createMpaPlugin({
@@ -62,6 +62,7 @@ export default defineConfig(({ mode }): UserConfig => {
       checker({
         root: process.cwd(),
         eslint: {
+          useFlatConfig: true,
           lintCommand: 'eslint "./src/**/*.{ts,tsx,vue}"'
         },
         stylelint: {
