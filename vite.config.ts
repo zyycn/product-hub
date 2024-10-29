@@ -74,7 +74,7 @@ export default defineConfig(({ mode }): UserConfig => {
           lintCommand: 'eslint "./src/**/*.{ts,tsx,vue}"'
         },
         stylelint: {
-          lintCommand: 'stylelint "**/*.{vue,css,scss}"'
+          lintCommand: 'stylelint "./src/**/*.{vue,css,scss}"'
         }
       })
     ],
