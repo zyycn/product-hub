@@ -5,6 +5,7 @@ import { defineConfig, loadEnv, UserConfig } from 'vite'
 import checker from 'vite-plugin-checker'
 import viteCompression from 'vite-plugin-compression'
 import { createMpaPlugin } from 'vite-plugin-virtual-mpa'
+
 import buildInfo from './config/build-info'
 import mpaEntry from './config/mpa-entry'
 
@@ -19,6 +20,13 @@ export default defineConfig(({ mode }): UserConfig => {
     resolve: {
       alias: {
         '@': resolve(__dirname, 'src')
+      }
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern'
+        }
       }
     },
     plugins: [

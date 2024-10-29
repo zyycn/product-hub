@@ -3,7 +3,7 @@ import App from './App.vue'
 
 import 'normalize.css'
 
-import ProdConsole from '@/plugins/prod-console'
+import ProdConsole from '@/utils/prod-console'
 
 const app = createApp(App)
 

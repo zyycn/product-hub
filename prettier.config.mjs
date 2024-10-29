@@ -5,13 +5,5 @@ export default {
   arrowParens: 'avoid',
   trailingComma: 'none',
   printWidth: 100,
-  endOfLine: 'lf',
-  overrides: [
-    {
-      files: '.prettierrc',
-      options: {
-        parser: 'json'
-      }
-    }
-  ]
+  endOfLine: 'lf'
 }

@@ -4,6 +4,10 @@ const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: '/',
+      redirect: '/lock'
+    },
+    {
       path: '/lock',
       name: 'Lock',
       meta: { title: '锁屏' },

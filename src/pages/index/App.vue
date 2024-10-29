@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
-import { setRootFontSize } from '@/plugins/utils'
+import { setRootFontSize } from '@/utils'
 
 onMounted(() => {
   setRootFontSize(1280, 1920)

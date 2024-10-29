@@ -4,6 +4,7 @@ import tseslint from 'typescript-eslint'
 import eslintPluginVue from 'eslint-plugin-vue'
 import importPlugin from 'eslint-plugin-import'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+import unpluginAutoImport from './node_modules/.unplugin-auto-import/.eslintrc.mjs'
 
 export default tseslint.config(
   // 忽略文件
@@ -64,7 +65,7 @@ export default tseslint.config(
         }
       },
       globals: {
-        ...() => import('./node_modules/.unplugin-auto-import/.eslintrc.mjs')
+        ...unpluginAutoImport.globals
       }
     },
     rules: {

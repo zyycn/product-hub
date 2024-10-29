@@ -3,9 +3,9 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-import ElementUI from '@/plugins/element-ui'
-import ProdConsole from '@/plugins/prod-console'
-import Nprogress from '@/plugins/nprogress'
+import ElementUI from '@/utils/element-ui'
+import ProdConsole from '@/utils/prod-console'
+import Nprogress from '@/utils/nprogress'
 
 import 'normalize.css'
 
