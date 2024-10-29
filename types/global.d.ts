@@ -5,3 +5,7 @@ declare const __APP_INFO__: {
   GIT_COMMITHASH: string
   GIT_COMMIT_TIME: string
 }
+
+// 进度条
+declare module 'nprogress'
+declare module 'qs'
