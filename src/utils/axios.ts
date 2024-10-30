@@ -51,7 +51,7 @@ export default class HttpRequest {
 
         return config
       },
-      (error: Axios.AxiosError) => {
+      error => {
         throw Promise.reject(error)
       }
     )
@@ -84,12 +84,12 @@ export default class HttpRequest {
           return Promise.reject(error)
         }
 
-        const { code, message } = error || {}
+        const { code, message } = error as Axios.AxiosError
         const err: string = error?.toString?.() ?? ''
         let errMessage = ''
 
         try {
-          if (code === 'ECONNABORTED' && message.indexOf('timeout') !== -1) {
+          if (code === 'ECONNABORTED' && message?.indexOf('timeout') !== -1) {
             errMessage = '接口请求超时,请刷新页面重试!'
           }
           if (err?.includes('Network Error')) {

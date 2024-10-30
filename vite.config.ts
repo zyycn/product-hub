@@ -5,6 +5,8 @@ import { defineConfig, loadEnv, UserConfig } from 'vite'
 import checker from 'vite-plugin-checker'
 import viteCompression from 'vite-plugin-compression'
 import { createMpaPlugin } from 'vite-plugin-virtual-mpa'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver, PrimeVueResolver } from 'unplugin-vue-components/resolvers'
 
 import buildInfo from './config/build-info'
 import mpaEntry from './config/mpa-entry'
@@ -47,11 +49,16 @@ export default defineConfig(({ mode }): UserConfig => {
             type: true
           }
         ],
-        dts: 'src/types/auto-imports.d.ts',
+        dts: 'types/auto-imports.d.ts',
         eslintrc: {
           enabled: true,
           filepath: './node_modules/.unplugin-auto-import/.eslintrc.mjs'
         }
+      }),
+      Components({
+        // dts: 'types/components.d.ts',
+        dts: false,
+        resolvers: [ElementPlusResolver(), PrimeVueResolver()]
       }),
       createMpaPlugin({
         htmlMinify: true,

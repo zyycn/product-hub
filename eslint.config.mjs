@@ -70,5 +70,13 @@ export default tseslint.config(
     rules: {
       'vue/multi-word-component-names': 'off'
     }
+  },
+
+  // 在TS下禁用未定义的变量规则
+  {
+    files: ['**/*.ts', '**/*.vue'],
+    rules: {
+      'no-undef': 'off'
+    }
   }
 )

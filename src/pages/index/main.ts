@@ -1,12 +1,12 @@
 import { createApp } from 'vue'
+
 import App from './App.vue'
+
+import PrimeVueUi from '@/utils/prime-vue-ui'
 
 import 'normalize.css'
 
-import ProdConsole from '@/utils/prod-console'
-
 const app = createApp(App)
 
-app.use(ProdConsole)
-
+app.use(PrimeVueUi)
 app.mount('#app')
