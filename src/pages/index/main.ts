@@ -2,11 +2,11 @@ import { createApp } from 'vue'
 
 import App from './App.vue'
 
-import PrimeVueUi from '@/utils/prime-vue-ui'
+import ElementPlus from '@/utils/element-plus-ui'
 
 import 'normalize.css'
 
 const app = createApp(App)
 
-app.use(PrimeVueUi)
+app.use(ElementPlus)
 app.mount('#app')

@@ -6,7 +6,7 @@ import checker from 'vite-plugin-checker'
 import viteCompression from 'vite-plugin-compression'
 import { createMpaPlugin } from 'vite-plugin-virtual-mpa'
 import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver, PrimeVueResolver } from 'unplugin-vue-components/resolvers'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 import buildInfo from './config/build-info'
 import mpaEntry from './config/mpa-entry'
@@ -56,9 +56,8 @@ export default defineConfig(({ mode }): UserConfig => {
         }
       }),
       Components({
-        // dts: 'types/components.d.ts',
         dts: false,
-        resolvers: [ElementPlusResolver(), PrimeVueResolver()]
+        resolvers: [ElementPlusResolver()]
       }),
       createMpaPlugin({
         htmlMinify: true,

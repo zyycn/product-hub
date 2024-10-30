@@ -3,6 +3,9 @@ import 'element-plus/dist/index.css'
 
 export default {
   install(app: App, options = {}) {
-    app.use(ElementPlus, options)
+    app.use(ElementPlus, {
+      size: 'large',
+      ...options
+    })
   }
 }

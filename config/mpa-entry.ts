@@ -4,7 +4,7 @@ const pages: Page[] = [
   {
     name: 'index',
     entry: '/src/pages/index/main.ts',
-    data: { title: '项目路由' }
+    data: { title: '项目地图（开发）' }
   },
   {
     name: 'ops-tools',
