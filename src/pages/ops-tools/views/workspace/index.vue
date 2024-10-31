@@ -10,7 +10,7 @@ let value1 = ref(true)
   <div class="lock">
     <h1>锁屏</h1>
 
-    <el-icon :size="120" color="#ccc">
+    <el-icon :size="120">
       <icon-mdi-account />
     </el-icon>
 

@@ -6,7 +6,7 @@ const { collapse } = storeToRefs(store)
 </script>
 
 <template>
-  <el-menu default-active="1" :collapse="collapse">
+  <el-menu default-active="1" :collapse="collapse" width="224">
     <el-sub-menu index="2-1">
       <template #title>
         <el-icon>
@@ -27,15 +27,22 @@ const { collapse } = storeToRefs(store)
 
 <style scoped lang="scss">
 .el-menu {
-  overflow: hidden !important;
   border-right: none;
 
   &:not(.el-menu--collapse) {
     width: 224px;
+  }
 
-    .collapse {
-      padding: 0 4px;
-      text-align: right;
+  .el-sub-menu__title,
+  .el-menu-item {
+    .el-icon {
+      transition: transform 0.25s;
+    }
+
+    &:hover {
+      .el-icon {
+        transform: scale(1.2);
+      }
     }
   }
 }
