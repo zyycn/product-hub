@@ -36,7 +36,7 @@ import SideBar from './components/SideBar.vue'
     width: auto !important;
     height: 100vh;
     overflow: hidden;
-    background: #545c64;
+    border-right: 0.0625rem solid var(--el-menu-border-color);
   }
 
   .el-header {
@@ -44,13 +44,11 @@ import SideBar from './components/SideBar.vue'
     align-items: center;
     height: 50px !important;
     overflow: hidden;
-    background-color: #fff;
   }
 
   .el-main {
     flex: initial;
     overflow: hidden;
-    background-color: #fff;
   }
 }
 </style>

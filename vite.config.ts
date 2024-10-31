@@ -7,6 +7,8 @@ import viteCompression from 'vite-plugin-compression'
 import { createMpaPlugin } from 'vite-plugin-virtual-mpa'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 
 import buildInfo from './config/build-info'
 import mpaEntry from './config/mpa-entry'
@@ -57,8 +59,9 @@ export default defineConfig(({ mode }): UserConfig => {
       }),
       Components({
         dts: false,
-        resolvers: [ElementPlusResolver()]
+        resolvers: [ElementPlusResolver(), IconsResolver({ prefix: 'icon' })]
       }),
+      Icons({ compiler: 'vue3' }),
       createMpaPlugin({
         htmlMinify: true,
         verbose: false,
@@ -75,6 +78,7 @@ export default defineConfig(({ mode }): UserConfig => {
       }),
       checker({
         root: process.cwd(),
+        terminal: false,
         eslint: {
           useFlatConfig: true,
           lintCommand: 'eslint "./src/**/*.{ts,tsx,vue}"'
@@ -100,7 +104,6 @@ export default defineConfig(({ mode }): UserConfig => {
           drop_debugger: true
         }
       }
-    },
-    optimizeDeps: { force: true }
+    }
   }
 })

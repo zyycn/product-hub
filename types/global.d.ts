@@ -1,4 +1,4 @@
-import type { Page } from 'vite-plugin-virtual-mpa'
+import { Page } from 'vite-plugin-virtual-mpa'
 
 declare global {
   const __APP_PAGES__: Page[]
@@ -9,6 +9,3 @@ declare global {
     GIT_COMMIT_TIME: string
   }
 }
-
-declare module 'nprogress'
-declare module 'qs'

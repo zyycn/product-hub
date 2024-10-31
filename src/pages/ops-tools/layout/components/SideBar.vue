@@ -1,40 +1,26 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useAppStore } from '@/pages/ops-tools/store'
+
+const store = useAppStore()
+const { collapse } = storeToRefs(store)
+</script>
 
 <template>
-  <el-menu
-    active-text-color="#ffd04b"
-    background-color="#545c64"
-    default-active="2"
-    text-color="#fff"
-  >
-    <el-sub-menu index="1">
+  <el-menu default-active="1" :collapse="collapse">
+    <el-sub-menu index="2-1">
       <template #title>
-        <el-icon><location /></el-icon>
-        <span>Navigator One</span>
+        <el-icon>
+          <icon-CarbonWorkspace />
+        </el-icon>
+        <span>工作台</span>
       </template>
-      <el-menu-item-group title="Group One">
-        <el-menu-item index="1-1">item one</el-menu-item>
-        <el-menu-item index="1-2">item two</el-menu-item>
-      </el-menu-item-group>
-      <el-menu-item-group title="Group Two">
-        <el-menu-item index="1-3">item three</el-menu-item>
-      </el-menu-item-group>
-      <el-sub-menu index="1-4">
-        <template #title>item four</template>
-        <el-menu-item index="1-4-1">item one</el-menu-item>
-      </el-sub-menu>
+      <el-menu-item index="2-1">选项1</el-menu-item>
+      <el-menu-item index="2-2">选项2</el-menu-item>
+      <el-menu-item v-for="i in 40" :key="i" :index="i.toString()">选项{{ i }}</el-menu-item>
     </el-sub-menu>
-    <el-menu-item index="2">
-      <el-icon><icon-menu /></el-icon>
-      <span>Navigator Two</span>
-    </el-menu-item>
-    <el-menu-item index="3" disabled>
-      <el-icon><document /></el-icon>
-      <span>Navigator Three</span>
-    </el-menu-item>
     <el-menu-item index="4">
-      <el-icon><setting /></el-icon>
-      <span>Navigator Four</span>
+      <el-icon> <icon-CarbonWorkspace /></el-icon>
+      <template #title>Navigator Four</template>
     </el-menu-item>
   </el-menu>
 </template>
@@ -42,35 +28,14 @@
 <style scoped lang="scss">
 .el-menu {
   overflow: hidden !important;
-  border: none;
+  border-right: none;
 
   &:not(.el-menu--collapse) {
-    width: 235px;
+    width: 224px;
 
     .collapse {
       padding: 0 4px;
       text-align: right;
-    }
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 60px;
-    padding: 0 16px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-    white-space: nowrap;
-
-    i {
-      margin-left: 2px;
-      font-size: 30px;
-    }
-
-    .logo-text {
-      margin-left: 10px;
     }
   }
 }

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite",
     "build": "vue-tsc && npm run lint && npm run lint:style && vite build",
     "build:test": "vite build --mode test",
     "build:production": "npm run build --mode production",
@@ -44,7 +44,7 @@
     "postcss-preset-env": "^10.0.8",
     "postcss-pxtorem": "^6.1.0",
     "prettier": "^3.3.3",
-    "sass": "^1.80.4",
+    "sass": "^1.79.6",
     "stylelint": "^16.10.0",
     "stylelint-config-recess-order": "^5.1.1",
     "stylelint-config-recommended-vue": "^1.5.0",
