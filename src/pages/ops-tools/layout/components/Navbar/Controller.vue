@@ -14,17 +14,17 @@ const toggleDark = () => {
 <template>
   <div class="controller">
     <el-icon size="20" @click="toggle">
-      <icon-MingcuteFullscreenLine v-if="!isFullscreen" />
-      <icon-MingcuteFullscreenExitLine v-else />
+      <iconify-icon v-if="!isFullscreen" icon="mingcute-fullscreen-line" />
+      <iconify-icon v-else icon="mingcute-fullscreen-exit-line" />
     </el-icon>
 
     <el-icon size="20" @click="toggleDark">
-      <icon-MingcuteSunLine v-if="!isDark" />
-      <icon-MingcuteMoonLine v-else />
+      <iconify-icon v-if="!isDark" icon="line-md:sunny-outline" />
+      <iconify-icon v-else icon="line-md:moon-simple" />
     </el-icon>
 
     <el-avatar :size="36">
-      <icon-IconParkSolidAvatar />
+      <iconify-icon icon="icon-park-solid:avatar" />
     </el-avatar>
   </div>
 </template>

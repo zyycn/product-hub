@@ -11,7 +11,7 @@ const { collapse } = storeToRefs(store)
   <div class="navbar">
     <div class="left">
       <el-icon :class="{ 'el-icon--collapsed': collapse }" @click="store.setCollapse(!collapse)">
-        <icon-ClarityCollapseLine />
+        <iconify-icon icon="clarity:collapse-line" />
       </el-icon>
 
       <Breadcrumb />

@@ -5,11 +5,9 @@ import { defineConfig, loadEnv, UserConfig } from 'vite'
 import checker from 'vite-plugin-checker'
 import viteCompression from 'vite-plugin-compression'
 import { createMpaPlugin } from 'vite-plugin-virtual-mpa'
+import VueJsx from '@vitejs/plugin-vue-jsx'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
-
 import buildInfo from './config/build-info'
 import mpaEntry from './config/mpa-entry'
 
@@ -35,6 +33,7 @@ export default defineConfig(({ mode }): UserConfig => {
     },
     plugins: [
       vue(),
+      VueJsx(),
       AutoImport({
         imports: [
           'vue',
@@ -59,9 +58,8 @@ export default defineConfig(({ mode }): UserConfig => {
       }),
       Components({
         dts: false,
-        resolvers: [ElementPlusResolver(), IconsResolver({ prefix: 'icon' })]
+        resolvers: [ElementPlusResolver()]
       }),
-      Icons({ compiler: 'vue3' }),
       createMpaPlugin({
         htmlMinify: true,
         verbose: false,

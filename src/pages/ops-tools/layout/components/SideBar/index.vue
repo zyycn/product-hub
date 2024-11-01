@@ -1,44 +1,26 @@
 <script setup lang="ts">
+import { cloneDeep } from 'lodash-es'
+import Menu from './Menu.vue'
 import { useAppStore } from '@/pages/ops-tools/store'
+import router from '@/pages/ops-tools/router'
+
+const routes = cloneDeep(router.options.routes)
 
 const store = useAppStore()
 const { collapse } = storeToRefs(store)
 </script>
 
 <template>
-  <div class="side-bar">
+  <div class="sidebar">
     <div class="logo">
       <el-icon :size="32">
-        <icon-SvgSpinnersWindToy />
+        <iconify-icon icon="svg-spinners:wind-toy" />
       </el-icon>
       <span v-show="!collapse">OPS-Tools</span>
     </div>
     <el-scrollbar>
-      <el-menu default-active="1" :collapse="collapse" popper-class="menu-popper">
-        <el-sub-menu index="1">
-          <template #title>
-            <el-icon size="17">
-              <icon-PajamasOverview />
-            </el-icon>
-            <span>概览</span>
-          </template>
-          <el-menu-item index="1-1">
-            <el-icon size="17"> <icon-CarbonWorkspace /></el-icon>
-            <template #title>工作台</template>
-          </el-menu-item>
-        </el-sub-menu>
-        <el-sub-menu index="11">
-          <template #title>
-            <el-icon size="17">
-              <icon-PajamasOverview />
-            </el-icon>
-            <span>概览</span>
-          </template>
-          <el-menu-item index="1-11">
-            <el-icon size="17"> <icon-CarbonWorkspace /></el-icon>
-            <template #title>工作台</template>
-          </el-menu-item>
-        </el-sub-menu>
+      <el-menu :collapse="collapse" popper-class="menu-popper">
+        <Menu :routes="routes" />
       </el-menu>
     </el-scrollbar>
   </div>
@@ -75,7 +57,7 @@ const { collapse } = storeToRefs(store)
 </style>
 
 <style scoped lang="scss">
-.side-bar {
+.sidebar {
   position: relative;
   box-sizing: border-box;
   height: 100%;
@@ -162,12 +144,13 @@ const { collapse } = storeToRefs(store)
 
       .el-sub-menu {
         border-radius: 8px;
+      }
 
-        .el-sub-menu__title {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
+      .el-sub-menu__title,
+      .el-menu-tooltip__trigger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .el-sub-menu.is-active {

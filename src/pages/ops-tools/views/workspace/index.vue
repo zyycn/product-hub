@@ -4,7 +4,7 @@
   <div class="lock">
     <el-card shadow="never">
       <el-icon :size="120">
-        <icon-mdi-account />
+        <iconify-icon icon="mdi-account" />
       </el-icon>
     </el-card>
 
