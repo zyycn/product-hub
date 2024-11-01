@@ -4,7 +4,11 @@ import { useFullscreen, useDark, useToggle } from '@vueuse/core'
 const { toggle, isFullscreen } = useFullscreen()
 
 const isDark = useDark()
-const toggleDark = useToggle(isDark)
+const toggleDark = () => {
+  document.startViewTransition(() => {
+    useToggle(isDark)()
+  })
+}
 </script>
 
 <template>
@@ -14,7 +18,7 @@ const toggleDark = useToggle(isDark)
       <icon-MingcuteFullscreenExitLine v-else />
     </el-icon>
 
-    <el-icon size="20" @click="toggleDark()">
+    <el-icon size="20" @click="toggleDark">
       <icon-MingcuteSunLine v-if="!isDark" />
       <icon-MingcuteMoonLine v-else />
     </el-icon>

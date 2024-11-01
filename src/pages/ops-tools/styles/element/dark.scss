@@ -1,7 +1,8 @@
 @use 'element-plus/theme-chalk/src/dark/css-vars.scss' as *;
 
 html.dark {
-  --background-deep: #121212 !important;
+  --logo-color: hsl(0deg 0% 95%);
+  --background-deep: #121212;
   --menu-item-color: hsl(0deg 0% 95% / 80%);
   --menu-item-active-background-color: hsl(216deg 5% 19%);
   --menu-item-active-color: hsl(0deg 0% 98%);

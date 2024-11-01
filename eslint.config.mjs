@@ -52,9 +52,9 @@ export default tseslint.config(
     }
   },
 
-  // Vue规则
+  // Vue、TS、JSX规则
   {
-    files: ['**/*.vue'],
+    files: ['**/*.vue', '**/*.ts', '**/*.tsx'],
     languageOptions: {
       parserOptions: {
         parser: tseslint.parser,
@@ -68,14 +68,7 @@ export default tseslint.config(
       }
     },
     rules: {
-      'vue/multi-word-component-names': 'off'
-    }
-  },
-
-  // 在TS下禁用未定义的变量规则
-  {
-    files: ['**/*.ts', '**/*.vue'],
-    rules: {
+      'vue/multi-word-component-names': 'off',
       'no-undef': 'off'
     }
   }
