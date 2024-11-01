@@ -3,7 +3,7 @@ import { findIndex } from 'lodash-es'
 import postcssPresetEnv from 'postcss-preset-env'
 import postcssPxtorem from 'postcss-pxtorem'
 
-const adaptivePages = ['index']
+const adaptivePages = []
 
 export default function () {
   return {

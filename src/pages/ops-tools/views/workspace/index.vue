@@ -1,26 +1,15 @@
-<script setup lang="ts">
-import { useDark, useToggle } from '@vueuse/core'
-
-const isDark = useDark()
-const toggleDark = useToggle(isDark)
-let value1 = ref(true)
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="lock">
-    <h1>锁屏</h1>
+    <el-card shadow="never">
+      <el-icon :size="120">
+        <icon-mdi-account />
+      </el-icon>
+    </el-card>
 
-    <el-icon :size="120">
-      <icon-mdi-account />
-    </el-icon>
-
-    <el-switch
-      v-model="value1"
-      size="large"
-      inline-prompt
-      active-text="是"
-      inactive-text="否"
-      @change="toggleDark"
-    />
+    <el-card shadow="never">
+      <div v-for="i in 100" :key="i">{{ i }}</div>
+    </el-card>
   </div>
 </template>

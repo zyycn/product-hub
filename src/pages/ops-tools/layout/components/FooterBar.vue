@@ -9,9 +9,11 @@ const year = dayjs().format('YYYY')
 
 <style scoped lang="scss">
 .footer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  margin: 10px 0;
+  height: 100%;
   font-size: 12px;
-  text-align: center;
 }
 </style>
