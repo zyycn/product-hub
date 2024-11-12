@@ -11,37 +11,37 @@ const routes = [
       {
         path: '/workspace',
         name: 'Workspace',
-        meta: { title: '工作台', icon: 'carbon-workspace' },
+        meta: { title: '工作台', icon: 'openmoji:desktop-computer' },
         component: () => import('./views/workspace/index.vue')
       },
       {
         path: '/dashboard',
         name: 'Dashboard',
-        meta: { title: '仪表盘', icon: 'carbon:dashboard' },
+        meta: { title: '仪表盘', icon: 'openmoji:roller-coaster' },
         component: () => import('./views/dashboard/index.vue')
       },
       {
         path: '/nested',
         name: 'Nested',
-        meta: { title: '嵌套路由', icon: 'carbon:menu' },
+        meta: { title: '嵌套路由', icon: 'openmoji:champignon-brown' },
         component: () => import('./views/nested/index.vue'),
         children: [
           {
             path: '/nested/nested-1',
             name: 'Nested-1',
-            meta: { title: '嵌套路由-1', icon: 'carbon:menu' },
+            meta: { title: '嵌套路由-1', icon: 'openmoji:champignon-brown' },
             component: () => import('./views/nested/nested-1/index.vue')
           },
           {
             path: '/nested/nested-2',
             name: 'Nested-2',
-            meta: { title: '嵌套路由-2', icon: 'carbon:menu' },
+            meta: { title: '嵌套路由-2', icon: 'openmoji:champignon-brown' },
             component: () => import('./views/nested/nested-2/index.vue'),
             children: [
               {
                 path: '/nested/nested-2/nested-2-1',
                 name: 'Nested-2-1',
-                meta: { title: '嵌套路由-2-1', icon: 'carbon:menu' },
+                meta: { title: '嵌套路由-2-1', icon: 'openmoji:champignon-brown' },
                 component: () => import('./views/nested/nested-2/nested-2-1/index.vue')
               }
             ]

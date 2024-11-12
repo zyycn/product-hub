@@ -27,6 +27,7 @@ const routeMatched = computed(() => {
     .el-breadcrumb__inner {
       display: inline-flex;
       align-items: center;
+      font-size: 14px;
     }
   }
 

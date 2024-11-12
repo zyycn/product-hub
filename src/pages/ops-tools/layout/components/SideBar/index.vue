@@ -18,7 +18,7 @@ const avtiveRoute = computed(() => {
   <div class="sidebar">
     <div class="logo">
       <el-icon :size="32">
-        <iconify-icon icon="svg-spinners:wind-toy" />
+        <iconify-icon icon="unjs:undocs" />
       </el-icon>
       <span v-show="!collapse">OPS-Tools</span>
     </div>

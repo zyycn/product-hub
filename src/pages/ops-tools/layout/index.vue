@@ -41,6 +41,8 @@ import SideBar from './components/SideBar/index.vue'
   }
 
   .el-header {
+    --el-header-padding: 0 15px;
+
     display: flex;
     align-items: center;
     height: 50px !important;
