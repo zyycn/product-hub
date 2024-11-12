@@ -54,12 +54,12 @@ const avtiveRoute = computed(() => {
     color: var(--menu-item-color);
     border-radius: 8px;
 
-    .el-icon {
+    .iconify {
       transition: transform 0.25s;
     }
 
     &:hover {
-      .el-icon {
+      .iconify {
         transform: scale(1.2);
       }
     }
@@ -130,16 +130,17 @@ const avtiveRoute = computed(() => {
   position: relative;
   box-sizing: border-box;
   height: 100%;
-  padding-top: 60px;
+  padding-top: 40px;
 
   .logo {
     position: absolute;
     top: 0;
     left: 50%;
+    z-index: 1;
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    height: 60px;
+    height: 50px;
     overflow: hidden;
     font-size: 18px;
     font-weight: 600;
@@ -147,13 +148,14 @@ const avtiveRoute = computed(() => {
     transform: translateX(-50%);
 
     span {
+      margin-right: 10px;
       margin-left: 10px;
       text-wrap: nowrap;
     }
   }
 
   :deep(.el-scrollbar) {
-    height: calc(100vh - 60px);
+    height: calc(100vh - 40px);
 
     .is-vertical {
       right: 0 !important;

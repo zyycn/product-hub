@@ -17,7 +17,7 @@ defineProps({
   }
 })
 
-const iconSize = 17
+const iconSize = 18
 </script>
 
 <template>

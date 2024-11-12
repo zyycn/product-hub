@@ -2,11 +2,9 @@
 
 <template>
   <div class="lock">
-    <el-card shadow="never">
-      <el-icon :size="120">
-        <iconify-icon icon="mdi-account" />
-      </el-icon>
-    </el-card>
+    <el-icon :size="120">
+      <iconify-icon icon="mdi-account" />
+    </el-icon>
 
     <el-card shadow="never">
       <div v-for="i in 100" :key="i">{{ i }}</div>

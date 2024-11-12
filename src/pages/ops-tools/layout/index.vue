@@ -11,14 +11,17 @@ import SideBar from './components/SideBar/index.vue'
       <el-aside>
         <SideBar />
       </el-aside>
+
       <el-container>
         <el-header>
           <Navbar />
         </el-header>
-        <el-scrollbar style="height: calc(100vh - 50px)">
+
+        <el-scrollbar class="layout-main">
           <el-main>
             <AppMain />
           </el-main>
+
           <el-footer>
             <FooterBar />
           </el-footer>
@@ -44,17 +47,17 @@ import SideBar from './components/SideBar/index.vue'
     border-bottom: 1px solid var(--el-menu-border-color);
   }
 
-  .el-main {
-    flex: initial;
-    height: 100%;
-    padding: 16px;
-    padding-bottom: 0 !important;
-    overflow: hidden;
+  .layout-main {
+    height: calc(100vh - 50px);
     background-color: var(--background-deep);
-  }
 
-  .el-footer {
-    background-color: var(--background-deep);
+    .el-main {
+      flex: initial;
+      height: 100%;
+      padding: 12px;
+      padding-bottom: 0 !important;
+      overflow: hidden;
+    }
   }
 }
 </style>

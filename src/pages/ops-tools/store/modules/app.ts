@@ -6,6 +6,9 @@ export const useAppStore = defineStore('app', {
       collapse: false
     }
   },
+  persist: {
+    storage: sessionStorage
+  },
   actions: {
     setCollapse(collapse: boolean) {
       this.collapse = collapse

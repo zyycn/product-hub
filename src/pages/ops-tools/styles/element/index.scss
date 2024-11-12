@@ -7,3 +7,12 @@
   --menu-item-active-background-color: hsl(212deg 100% 45% / 15%);
   --menu-item-active-color: hsl(212deg 100% 45%);
 }
+
+.el-card {
+  --el-card-border-radius: 8px !important;
+
+  .el-card__header {
+    padding: calc(var(--el-card-padding) - 4px) var(--el-card-padding);
+    font-weight: bold;
+  }
+}

@@ -1,7 +1,7 @@
 {
   "vue-script-setup": {
     "scope": "vue",
-    "prefix": "vbas",
+    "prefix": "vbase",
     "body": [
       "<script setup lang=\"ts\">",
       "",

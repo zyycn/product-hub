@@ -15,6 +15,12 @@ const routes = [
         component: () => import('./views/workspace/index.vue')
       },
       {
+        path: '/dashboard',
+        name: 'Dashboard',
+        meta: { title: '仪表盘', icon: 'carbon:dashboard' },
+        component: () => import('./views/dashboard/index.vue')
+      },
+      {
         path: '/nested',
         name: 'Nested',
         meta: { title: '嵌套路由', icon: 'carbon:menu' },
