@@ -1,7 +1,7 @@
 {
   "name": "product-hub",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,11 +11,12 @@
     "build:preview": "vite build && vite preview",
     "lint": "eslint src --fix",
     "lint:style": "stylelint **/*.{vue,css,scss} --fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
-    "@iconify/json": "^2.2.268",
+    "@iconify/json": "^2.2.270",
     "@vueuse/core": "^11.2.0",
     "axios": "^1.7.7",
     "dayjs": "^1.11.13",
@@ -31,19 +32,19 @@
   "devDependencies": {
     "@eslint/js": "^9.14.0",
     "@iconify/vue": "^4.1.2",
-    "@vitejs/plugin-vue": "^5.1.4",
-    "@vitejs/plugin-vue-jsx": "^4.0.1",
+    "@vitejs/plugin-vue": "^5.1.5",
+    "@vitejs/plugin-vue-jsx": "^4.1.0",
     "eslint": "^9.14.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-vue": "^9.30.0",
+    "eslint-plugin-vue": "^9.31.0",
     "globals": "^15.12.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "meow": "^9.0.0",
-    "postcss": "^8.4.47",
-    "postcss-preset-env": "^10.0.9",
+    "postcss": "^8.4.49",
+    "postcss-preset-env": "^10.1.0",
     "postcss-pxtorem": "^6.1.0",
     "prettier": "^3.3.3",
     "sass": "^1.80.6",
@@ -53,10 +54,10 @@
     "stylelint-config-standard": "^36.0.1",
     "stylelint-config-standard-scss": "^13.1.0",
     "typescript": "^5.6.3",
-    "typescript-eslint": "^8.13.0",
+    "typescript-eslint": "^8.14.0",
     "unplugin-auto-import": "^0.18.3",
     "unplugin-vue-components": "^0.27.4",
-    "vite": "^5.4.10",
+    "vite": "^5.4.11",
     "vite-plugin-checker": "^0.8.0",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-require-transform": "^1.0.21",
@@ -65,14 +66,31 @@
     "vue-tsc": "^2.1.10"
   },
   "engines": {
-    "node": ">= 20"
+    "node": ">=20.10.0",
+    "pnpm": ">=9.12.0"
   },
   "lint-staged": {
-    "*.{vue,ts,jsx,tsx,js}": [
-      "npm run lint"
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --cache --ignore-unknown  --write",
+      "eslint --cache --cache-location node_modules/.cache/.eslintcache --fix"
     ],
-    "*.{vue,css,scss}": [
-      "npm run lint:style"
+    "*.{scss,html,vue,css}": [
+      "prettier --cache --ignore-unknown --write",
+      "stylelint --fix --allow-empty-input"
+    ],
+    "*.md": [
+      "prettier --cache --ignore-unknown --write"
+    ],
+    "*.vue": [
+      "prettier --cache --write",
+      "eslint --cache --cache-location node_modules/.cache/.eslintcache --fix",
+      "stylelint --fix --allow-empty-input"
+    ],
+    "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
+      "prettier --cache --write--parser json"
+    ],
+    "package.json": [
+      "prettier --cache --write"
     ]
   },
   "husky": {

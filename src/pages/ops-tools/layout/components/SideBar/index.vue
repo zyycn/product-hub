@@ -8,6 +8,10 @@ const routes = cloneDeep(router.options.routes)
 
 const store = useAppStore()
 const { collapse } = storeToRefs(store)
+
+const avtiveRoute = computed(() => {
+  return useRoute()
+})
 </script>
 
 <template>
@@ -19,7 +23,7 @@ const { collapse } = storeToRefs(store)
       <span v-show="!collapse">OPS-Tools</span>
     </div>
     <el-scrollbar>
-      <el-menu :collapse="collapse" popper-class="menu-popper">
+      <el-menu :collapse="collapse" popper-class="menu-popper" :default-active="avtiveRoute.path">
         <Menu :routes="routes" />
       </el-menu>
     </el-scrollbar>
