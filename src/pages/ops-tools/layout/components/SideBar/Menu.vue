@@ -16,13 +16,15 @@ defineProps({
     default: () => []
   }
 })
+
+const iconSize = 17
 </script>
 
 <template>
   <template v-for="(item, index) in routes">
     <el-sub-menu v-if="item.name && item.children" :key="'el-sub-menu' + index" :index="item.path">
       <template #title>
-        <el-icon>
+        <el-icon :size="iconSize">
           <iconify-icon :icon="item.meta.icon" />
         </el-icon>
         <span>{{ item.meta.title }}</span>
@@ -35,7 +37,7 @@ defineProps({
 
     <!-- 没有子菜单的 -->
     <el-menu-item v-else :key="'el-menu-item' + index" :popper-offset="20" :index="item.path">
-      <el-icon>
+      <el-icon :size="iconSize">
         <iconify-icon :icon="item.meta.icon" />
       </el-icon>
       <template #title>

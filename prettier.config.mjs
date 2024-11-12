@@ -5,5 +5,14 @@ export default {
   arrowParens: 'avoid',
   trailingComma: 'none',
   printWidth: 100,
-  endOfLine: 'lf'
+  endOfLine: 'lf',
+  overrides: [
+    {
+      files: ['*.json5'],
+      options: {
+        quoteProps: 'preserve',
+        singleQuote: false
+      }
+    }
+  ]
 }

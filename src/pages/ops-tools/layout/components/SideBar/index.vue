@@ -23,7 +23,12 @@ const avtiveRoute = computed(() => {
       <span v-show="!collapse">OPS-Tools</span>
     </div>
     <el-scrollbar>
-      <el-menu :collapse="collapse" popper-class="menu-popper" :default-active="avtiveRoute.path">
+      <el-menu
+        :collapse="collapse"
+        :default-active="avtiveRoute.path"
+        popper-class="menu-popper"
+        router
+      >
         <Menu :routes="routes" />
       </el-menu>
     </el-scrollbar>
