@@ -5,7 +5,7 @@
  */
 export function setRootFontSize(minClientWidth: number, maxClientWidth: number) {
   const resize = () => {
-    let rootWidth
+    let rootWidth: number
     const rootHtml = document.documentElement
     if (rootHtml.clientWidth < minClientWidth) {
       rootWidth = minClientWidth

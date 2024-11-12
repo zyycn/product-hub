@@ -2,6 +2,7 @@
 
 <template>
   <div>nested-2</div>
+  <router-view></router-view>
 </template>
 
 <!-- <style scoped lang="scss"></style> -->

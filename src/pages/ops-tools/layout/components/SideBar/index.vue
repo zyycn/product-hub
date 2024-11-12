@@ -24,8 +24,10 @@ const avtiveRoute = computed(() => {
     </div>
     <el-scrollbar>
       <el-menu
+        class="menu-popper"
         :collapse="collapse"
         :default-active="avtiveRoute.path"
+        :popper-offset="15"
         popper-class="menu-popper"
         router
       >
@@ -36,30 +38,88 @@ const avtiveRoute = computed(() => {
 </template>
 
 <style lang="scss">
-.menu-popper {
+@mixin el-menu {
   --el-menu-item-height: 42px;
-  --el-menu-base-level-padding: 6px;
+  --el-menu-sub-item-height: 42px;
+  --el-menu-base-level-padding: 5px;
+  --el-menu-level-padding: 15px;
 
-  max-height: calc(100vh - 7px);
-  margin: 0 4px;
-  overflow: scroll;
-  scrollbar-width: none;
+  box-sizing: border-box;
+  padding: 8px;
+  border-right: none;
+  border-radius: 5px;
 
+  .el-sub-menu__title,
   .el-menu-item {
-    overflow: hidden !important;
+    color: var(--menu-item-color);
     border-radius: 8px;
 
-    &.is-active {
+    .el-icon {
+      transition: transform 0.25s;
+    }
+
+    &:hover {
+      .el-icon {
+        transform: scale(1.2);
+      }
+    }
+
+    .el-sub-menu__icon-arrow {
+      margin-right: 4px;
+    }
+  }
+
+  .el-sub-menu.is-active > .el-sub-menu__title {
+    color: var(--menu-item-active-color);
+  }
+
+  .el-menu-item.is-active {
+    color: var(--menu-item-active-color);
+    background-color: var(--menu-item-active-background-color);
+  }
+
+  &.el-menu--collapse {
+    width: 60px;
+
+    .el-sub-menu {
+      border-radius: 8px;
+    }
+
+    .el-sub-menu__title,
+    .el-menu-tooltip__trigger {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .el-sub-menu.is-active {
       color: var(--menu-item-active-color);
       background-color: var(--menu-item-active-background-color);
     }
+  }
+}
 
-    &:first-child {
-      margin-top: 0 !important;
+.menu-popper {
+  &.el-menu {
+    @include el-menu;
+
+    .el-sub-menu__title,
+    .el-menu-item {
+      margin-top: 4px;
     }
 
-    &:last-child {
-      margin-bottom: 0 !important;
+    &:not(.el-menu--collapse) {
+      width: 224px;
+    }
+  }
+
+  &.el-popper .el-menu {
+    @include el-menu;
+
+    width: 224px;
+
+    .el-sub-menu__title {
+      margin-top: 4px;
     }
   }
 }
@@ -70,7 +130,6 @@ const avtiveRoute = computed(() => {
   position: relative;
   box-sizing: border-box;
   height: 100%;
-  padding: 0 8px;
   padding-top: 60px;
 
   .logo {
@@ -98,74 +157,6 @@ const avtiveRoute = computed(() => {
 
     .is-vertical {
       right: 0 !important;
-    }
-  }
-
-  :deep(.el-menu) {
-    --el-menu-item-height: 42px;
-    --el-menu-sub-item-height: 42px;
-
-    border-right: none;
-
-    &:not(.el-menu--collapse) {
-      --el-menu-base-level-padding: 5px;
-
-      width: calc(224px - 16px);
-    }
-
-    .el-sub-menu__title,
-    .el-menu-item {
-      margin: 4px 0 !important;
-      overflow: hidden !important;
-      color: var(--menu-item-color);
-      border-radius: 8px;
-
-      .el-icon {
-        transition: transform 0.25s;
-      }
-
-      &:hover {
-        .el-icon {
-          transform: scale(1.2);
-        }
-      }
-
-      .el-sub-menu__icon-arrow {
-        margin-right: 4px;
-      }
-
-      &:first-child {
-        margin-top: 0 !important;
-      }
-    }
-
-    .el-sub-menu.is-active .el-sub-menu__title {
-      color: var(--menu-item-active-color);
-    }
-
-    .el-menu-item.is-active {
-      color: var(--menu-item-active-color);
-      background-color: var(--menu-item-active-background-color);
-    }
-
-    &.el-menu--collapse {
-      width: 50px;
-
-      .el-sub-menu {
-        border-radius: 8px;
-      }
-
-      .el-sub-menu__title,
-      .el-menu-tooltip__trigger {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .el-sub-menu.is-active {
-        color: var(--menu-item-active-color);
-        background-color: var(--menu-item-active-background-color);
-      }
     }
   }
 }
