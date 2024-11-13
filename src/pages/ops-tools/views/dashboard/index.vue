@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { Solar } from 'lunar-javascript'
-console.log(Solar)
+import tips from '@/utils/slack-off-tips'
 </script>
 
 <template>
@@ -14,9 +13,9 @@ console.log(Solar)
                 <iconify-icon icon="openmoji:hacker-cat" />
               </el-icon>
             </div>
-            <div>
-              <span>早安, 打工仔, 开始您一天的工作吧！</span>
-              <span></span>
+            <div class="tips">
+              <span>{{ tips[0] }}</span>
+              <span>{{ tips[1] }} {{ tips[2] }} {{ tips[3] }}</span>
             </div>
           </div>
         </el-card>
@@ -80,11 +79,27 @@ console.log(Solar)
     .content {
       display: flex;
       align-items: center;
-      font-size: 20px;
-      font-weight: bold;
 
       .avatar {
         margin-right: 15px;
+      }
+
+      .tips {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        span:nth-child(1) {
+          margin-bottom: 10px;
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+        span:nth-child(2) {
+          font-size: 14px;
+          color: --el-text-color-secondary;
+        }
       }
     }
   }
