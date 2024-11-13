@@ -6,18 +6,12 @@ const routes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/workspace',
+    redirect: '/dashboard',
     children: [
-      {
-        path: '/workspace',
-        name: 'Workspace',
-        meta: { title: '工作台', icon: 'openmoji:desktop-computer' },
-        component: () => import('./views/workspace/index.vue')
-      },
       {
         path: '/dashboard',
         name: 'Dashboard',
-        meta: { title: '仪表盘', icon: 'openmoji:roller-coaster' },
+        meta: { title: '概览', icon: 'openmoji:home-button' },
         component: () => import('./views/dashboard/index.vue')
       },
       {

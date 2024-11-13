@@ -22,6 +22,7 @@
     "dayjs": "^1.11.13",
     "element-plus": "https://pkg.pr.new/element-plus/element-plus@70b5d4f",
     "lodash-es": "^4.17.21",
+    "lunar-javascript": "^1.6.13",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "pinia": "^2.2.6",

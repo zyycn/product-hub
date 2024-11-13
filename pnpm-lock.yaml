@@ -29,6 +29,9 @@ importers:
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
+      lunar-javascript:
+        specifier: ^1.6.13
+        version: 1.6.13
       normalize.css:
         specifier: ^8.0.1
         version: 8.0.1
@@ -2582,6 +2585,9 @@ packages:
   lru-cache@6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
+
+  lunar-javascript@1.6.13:
+    resolution: {integrity: sha512-UMAq7BZwsQfaKubyJ38HyHAKN4PVnX/gt0iK83qBpnISfKTECxLOuG1ZTRj01XqB2ImpJochLlJLv0EVpZ3ziw==}
 
   magic-string@0.30.12:
     resolution: {integrity: sha512-Ea8I3sQMVXr8JhN4z+H/d8zwo+tYDgHE9+5G4Wnrwhs0gaK9fXTKx0Tw5Xwsd/bCPTTZNRAdpyzvoeORe9LYpw==}
@@ -6428,6 +6434,8 @@ snapshots:
   lru-cache@6.0.0:
     dependencies:
       yallist: 4.0.0
+
+  lunar-javascript@1.6.13: {}
 
   magic-string@0.30.12:
     dependencies:
