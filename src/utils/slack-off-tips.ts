@@ -1,5 +1,14 @@
 import { Solar, HolidayUtil } from 'lunar-javascript'
 
+interface Solar {
+  getMonth(): number
+  getDay(): number
+  getWeek(): number
+  getHour(): number
+  next(days: number): Solar
+  toYmd(): string
+}
+
 // Messages and tips
 const holidayMessages = ['革命即将胜利，同志们再摸 {d} 天就到{n}了！', '距离{n}假期还有 {d} 天！']
 const motivationalTips = [
