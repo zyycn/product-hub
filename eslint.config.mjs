@@ -8,7 +8,7 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 export default tseslint.config(
   // 忽略文件
   {
-    ignores: ['node_modules', 'dist', 'public', 'types/auto-imports.d.ts']
+    ignores: ['node_modules', 'dist', 'public']
   },
 
   // 配置全局变量
@@ -53,6 +53,7 @@ export default tseslint.config(
   // Vue、TS、JSX规则
   {
     files: ['**/*.vue', '**/*.ts', '**/*.tsx'],
+    ignores: ['types/auto-imports.d.ts'],
     languageOptions: {
       parserOptions: {
         parser: tseslint.parser,
