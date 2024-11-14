@@ -35,21 +35,7 @@ export default defineConfig(({ mode }): UserConfig => {
       vue(),
       VueJsx(),
       AutoImport({
-        imports: [
-          'vue',
-          'vue-router',
-          'pinia',
-          {
-            from: 'vue',
-            imports: ['App'],
-            type: true
-          },
-          {
-            from: 'vue-router',
-            imports: ['Router'],
-            type: true
-          }
-        ],
+        imports: ['vue', 'vue-router', 'pinia'],
         dts: 'types/auto-imports.d.ts',
         eslintrc: {
           enabled: true,

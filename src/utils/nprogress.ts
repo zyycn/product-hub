@@ -1,5 +1,7 @@
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
+import { App } from 'vue'
+import { Router } from 'vue-router'
 
 NProgress.configure({
   easing: 'ease',

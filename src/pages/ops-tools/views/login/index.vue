@@ -85,6 +85,7 @@
       img {
         height: 256px;
         animation: float 5s linear 0s infinite;
+        -webkit-user-drag: none;
       }
 
       div:nth-child(2) {
