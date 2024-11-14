@@ -4,6 +4,12 @@ import Layout from '@/pages/ops-tools/layout/index.vue'
 
 const routes = [
   {
+    path: '/login',
+    name: 'Login',
+    meta: { title: '登录' },
+    component: () => import('./views/login/index.vue')
+  },
+  {
     path: '/',
     component: Layout,
     redirect: '/dashboard',
@@ -15,32 +21,16 @@ const routes = [
         component: () => import('./views/dashboard/index.vue')
       },
       {
-        path: '/nested',
-        name: 'Nested',
-        meta: { title: '嵌套路由', icon: 'openmoji:champignon-brown' },
-        component: () => import('./views/nested/index.vue'),
-        children: [
-          {
-            path: '/nested/nested-1',
-            name: 'Nested-1',
-            meta: { title: '嵌套路由-1', icon: 'openmoji:champignon-brown' },
-            component: () => import('./views/nested/nested-1/index.vue')
-          },
-          {
-            path: '/nested/nested-2',
-            name: 'Nested-2',
-            meta: { title: '嵌套路由-2', icon: 'openmoji:champignon-brown' },
-            component: () => import('./views/nested/nested-2/index.vue'),
-            children: [
-              {
-                path: '/nested/nested-2/nested-2-1',
-                name: 'Nested-2-1',
-                meta: { title: '嵌套路由-2-1', icon: 'openmoji:champignon-brown' },
-                component: () => import('./views/nested/nested-2/nested-2-1/index.vue')
-              }
-            ]
-          }
-        ]
+        path: '/terminal',
+        name: 'Terminal',
+        meta: { title: '终端', icon: 'openmoji:code-editor' },
+        component: () => import('./views/terminal/index.vue')
+      },
+      {
+        path: '/file-manage',
+        name: 'FileManage',
+        meta: { title: '文件管理', icon: 'openmoji:open-file-folder' },
+        component: () => import('./views/file-manage/index.vue')
       }
     ]
   }

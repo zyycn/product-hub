@@ -1,10 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <el-card shadow="never">
-    <div>nested</div>
-    <router-view></router-view>
-  </el-card>
+  <div>文件</div>
 </template>
 
 <!-- <style scoped lang="scss"></style> -->

@@ -1,8 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>nested-2</div>
-  <router-view></router-view>
+  <div>终端</div>
 </template>
 
 <!-- <style scoped lang="scss"></style> -->

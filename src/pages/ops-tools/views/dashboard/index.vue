@@ -98,7 +98,7 @@ import tips from '@/utils/slack-off-tips'
 
         span:nth-child(2) {
           font-size: 14px;
-          color: --el-text-color-secondary;
+          color: var(--el-text-color-secondary);
         }
       }
     }
