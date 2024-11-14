@@ -12,6 +12,12 @@ export default {
     'scss/dollar-variable-pattern': '^_?[a-zA-Z0-9\\-]+$',
     'custom-property-pattern': '^_?[a-zA-Z0-9\\-]+$|^[a-zA-Z0-9\\-]+_[a-zA-Z0-9\\-]+$'
   },
+  overrides: [
+    {
+      files: ['*.html', '**/*.html'],
+      customSyntax: 'postcss-html'
+    }
+  ],
   ignoreFiles: [
     'node_modules/**',
     'dist/**',

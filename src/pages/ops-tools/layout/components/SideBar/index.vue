@@ -20,7 +20,7 @@ const avtiveRoute = computed(() => {
       <el-icon :size="32">
         <iconify-icon icon="unjs:undocs" />
       </el-icon>
-      <span v-show="!collapse">OPS-Tools</span>
+      <span v-show="!collapse">OPS Tools</span>
     </div>
     <el-scrollbar>
       <el-menu

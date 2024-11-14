@@ -6,7 +6,8 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    meta: { title: '登录' },
+    hidden: true,
+    meta: { title: '启动~！' },
     component: () => import('./views/login/index.vue')
   },
   {
