@@ -12,7 +12,7 @@ const xterm = new Terminal({
   cursorBlink: true,
   theme: {
     foreground: '#F8F8F8',
-    background: '#2D2E2C',
+    background: '#1d1e1f',
     black: '#1E1E1D',
     brightBlack: '#262625',
     red: '#CE5C5C',
@@ -154,9 +154,9 @@ nextTick(() => {
 
 <template>
   <div class="terminal">
-    <div class="container" shadow="never">
+    <el-card class="container" shadow="never">
       <div id="xterm" />
-    </div>
+    </el-card>
     <el-card class="commands" shadow="never"></el-card>
   </div>
 </template>
@@ -172,13 +172,13 @@ nextTick(() => {
   display: flex;
 
   .container {
-    box-sizing: border-box;
     flex: 1;
     height: calc(100vh - 130px);
-    padding: 20px 0 0 20px;
-    overflow: hidden;
-    background-color: #2d2e2c;
-    border-radius: 4px;
+    background-color: #1d1e1f;
+
+    :deep(.el-card__body) {
+      height: 100%;
+    }
 
     #xterm {
       height: 100%;
