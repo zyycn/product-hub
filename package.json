@@ -72,21 +72,21 @@
     "pnpm": ">=9.12.0"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "src/**/*.{js,jsx,ts,tsx}": [
       "prettier --cache --ignore-unknown  --write",
       "eslint --cache --cache-location node_modules/.cache/.eslintcache --fix"
     ],
-    "*.{scss,html,vue,css}": [
+    "src/**/*.{scss,html,vue,css}": [
       "prettier --cache --ignore-unknown --write",
+      "stylelint --fix --allow-empty-input"
+    ],
+    "src/**/*.vue": [
+      "prettier --cache --write",
+      "eslint --cache --cache-location node_modules/.cache/.eslintcache --fix",
       "stylelint --fix --allow-empty-input"
     ],
     "*.md": [
       "prettier --cache --ignore-unknown --write"
-    ],
-    "*.vue": [
-      "prettier --cache --write",
-      "eslint --cache --cache-location node_modules/.cache/.eslintcache --fix",
-      "stylelint --fix --allow-empty-input"
     ],
     "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
       "prettier --cache --write--parser json"

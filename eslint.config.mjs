@@ -8,7 +8,7 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 export default tseslint.config(
   // 忽略文件
   {
-    ignores: ['node_modules', 'dist', 'public']
+    ignores: ['node_modules', 'dist', 'public', 'types/auto-imports.d.ts']
   },
 
   // 配置全局变量
