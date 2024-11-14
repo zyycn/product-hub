@@ -8,7 +8,7 @@ const year = dayjs().format('YYYY')
     <el-icon :size="20">
       <iconify-icon icon="openmoji:cup-with-straw"></iconify-icon>
     </el-icon>
-    <span>Copyright ©{{ year }} OPS-Tools</span>
+    <span>Copyright ©{{ year }} OPS Tools</span>
   </div>
 </template>
 

@@ -56,6 +56,7 @@ import SideBar from './components/SideBar/index.vue'
     .el-main {
       flex: initial;
       height: 100%;
+      min-height: calc(100vh - 110px);
       padding: 12px;
       padding-bottom: 0 !important;
       overflow: hidden;
