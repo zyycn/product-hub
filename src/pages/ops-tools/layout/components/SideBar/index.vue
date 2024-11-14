@@ -41,7 +41,7 @@ const avtiveRoute = computed(() => {
 @mixin el-menu {
   --el-menu-item-height: 42px;
   --el-menu-sub-item-height: 42px;
-  --el-menu-base-level-padding: 5px;
+  --el-menu-base-level-padding: 10px;
   --el-menu-level-padding: 15px;
 
   box-sizing: border-box;

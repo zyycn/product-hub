@@ -9,7 +9,16 @@ const formRules = reactive({
   username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
   password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
 })
-const showPassword = ref(true)
+
+const inputType = ref('password')
+const passwordRef = ref()
+const handleToggleType = () => {
+  passwordRef.value.blur()
+  inputType.value = inputType.value === 'password' ? 'text' : 'password'
+  nextTick(() => {
+    passwordRef.value.focus()
+  })
+}
 
 const router = useRouter()
 const submitLoading = ref(false)
@@ -60,13 +69,14 @@ const toggleDark = () => {
           </el-form-item>
           <el-form-item prop="password">
             <el-input
+              ref="passwordRef"
               v-model="formData.password"
-              :type="showPassword ? 'password' : ''"
+              :type="inputType"
               placeholder="请输入密码"
             >
               <template #suffix>
-                <el-icon class="password-icon" :size="18" @click="showPassword = !showPassword">
-                  <iconify-icon v-if="showPassword" icon="solar:eye-closed-linear" />
+                <el-icon class="password-icon" :size="18" @click="handleToggleType">
+                  <iconify-icon v-if="inputType === 'password'" icon="solar:eye-closed-linear" />
                   <iconify-icon v-else icon="solar:eye-linear" />
                 </el-icon>
               </template>
@@ -75,7 +85,7 @@ const toggleDark = () => {
         </el-form>
         <div class="login-option">
           <el-checkbox>记住密码</el-checkbox>
-          <el-link type="primary">忘记密码？</el-link>
+          <el-link type="primary">忘记密码?</el-link>
         </div>
         <div class="login-btn">
           <el-button type="primary" size="large" :loading="submitLoading" @click="handleSubmit">
