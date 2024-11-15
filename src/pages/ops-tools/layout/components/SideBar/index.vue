@@ -67,6 +67,11 @@ const avtiveRoute = computed(() => {
     .el-sub-menu__icon-arrow {
       margin-right: 4px;
     }
+
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   .el-sub-menu.is-active > .el-sub-menu__title {

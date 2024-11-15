@@ -63,53 +63,54 @@ const toggleDark = () => {
           <h1>欢迎回来 👋🏻</h1>
           <span>请输入您的帐户信息以开始您的旅程</span>
         </div>
-        <el-form ref="loginFormRef" :rules="formRules" :model="formData" size="large">
-          <el-form-item prop="username">
-            <el-input v-model="formData.username" placeholder="请输入用户名"></el-input>
-          </el-form-item>
-          <el-form-item prop="password">
-            <el-input
-              ref="passwordRef"
-              v-model="formData.password"
-              :type="inputType"
-              placeholder="请输入密码"
-            >
-              <template #suffix>
-                <el-icon class="password-icon" :size="18" @click="handleToggleType">
-                  <iconify-icon v-if="inputType === 'password'" icon="solar:eye-closed-linear" />
-                  <iconify-icon v-else icon="solar:eye-linear" />
-                </el-icon>
-              </template>
-            </el-input>
-          </el-form-item>
-        </el-form>
-        <div class="login-option">
-          <el-checkbox>记住密码</el-checkbox>
-          <el-link type="primary">忘记密码?</el-link>
-        </div>
-        <div class="login-btn">
-          <el-button type="primary" size="large" :loading="submitLoading" @click="handleSubmit">
-            登录
-          </el-button>
-        </div>
-
-        <div class="other-login">
-          <el-divider>其它登陆方式</el-divider>
-          <div class="other-login-icon">
-            <el-icon :size="16">
-              <iconify-icon icon="simple-icons:github" />
-            </el-icon>
-            <el-icon :size="16">
-              <iconify-icon icon="simple-icons:google" />
-            </el-icon>
-            <el-icon :size="16">
-              <iconify-icon icon="simple-icons:tencentqq" />
-            </el-icon>
-            <el-icon :size="16">
-              <iconify-icon icon="simple-icons:wechat" />
-            </el-icon>
+        <el-config-provider size="large">
+          <el-form ref="loginFormRef" :rules="formRules" :model="formData">
+            <el-form-item prop="username">
+              <el-input v-model="formData.username" placeholder="请输入用户名"></el-input>
+            </el-form-item>
+            <el-form-item prop="password">
+              <el-input
+                ref="passwordRef"
+                v-model="formData.password"
+                :type="inputType"
+                placeholder="请输入密码"
+              >
+                <template #suffix>
+                  <el-icon class="password-icon" :size="18" @click="handleToggleType">
+                    <iconify-icon v-if="inputType === 'password'" icon="solar:eye-closed-linear" />
+                    <iconify-icon v-else icon="solar:eye-linear" />
+                  </el-icon>
+                </template>
+              </el-input>
+            </el-form-item>
+          </el-form>
+          <div class="login-option">
+            <el-checkbox>记住密码</el-checkbox>
+            <el-link type="primary">忘记密码?</el-link>
           </div>
-        </div>
+          <div class="login-btn">
+            <el-button type="primary" :loading="submitLoading" @click="handleSubmit">
+              登录
+            </el-button>
+          </div>
+          <div class="other-login">
+            <el-divider>其它登陆方式</el-divider>
+            <div class="other-login-icon">
+              <el-icon :size="16">
+                <iconify-icon icon="simple-icons:github" />
+              </el-icon>
+              <el-icon :size="16">
+                <iconify-icon icon="simple-icons:google" />
+              </el-icon>
+              <el-icon :size="16">
+                <iconify-icon icon="simple-icons:tencentqq" />
+              </el-icon>
+              <el-icon :size="16">
+                <iconify-icon icon="simple-icons:wechat" />
+              </el-icon>
+            </div>
+          </div>
+        </el-config-provider>
       </div>
     </div>
 
