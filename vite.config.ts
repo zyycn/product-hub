@@ -63,12 +63,15 @@ export default defineConfig(({ mode }): UserConfig => {
       checker({
         root: process.cwd(),
         terminal: false,
+        vueTsc: {
+          tsconfigPath: 'tsconfig.app.json'
+        },
         eslint: {
           useFlatConfig: true,
-          lintCommand: 'eslint "./src/**/*.{ts,tsx,vue}"'
+          lintCommand: 'eslint src'
         },
         stylelint: {
-          lintCommand: 'stylelint "./src/**/*.{vue,css,scss}"'
+          lintCommand: 'stylelint **/*.{vue,css,scss}'
         }
       })
     ],
