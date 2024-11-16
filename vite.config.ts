@@ -1,13 +1,14 @@
 import { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
-import AutoImport from 'unplugin-auto-import/vite'
 import { defineConfig, loadEnv, UserConfig } from 'vite'
 import checker from 'vite-plugin-checker'
 import viteCompression from 'vite-plugin-compression'
 import { createMpaPlugin } from 'vite-plugin-virtual-mpa'
-import VueJsx from '@vitejs/plugin-vue-jsx'
-import Components from 'unplugin-vue-components/vite'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+import unpluginAutoImport from 'unplugin-auto-import/vite'
+import unpluginVueComponents from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import vueDevTools from 'vite-plugin-vue-devtools'
 import buildInfo from './config/build-info'
 import mpaEntry from './config/mpa-entry'
 
@@ -33,8 +34,8 @@ export default defineConfig(({ mode }): UserConfig => {
     },
     plugins: [
       vue(),
-      VueJsx(),
-      AutoImport({
+      vueJsx(),
+      unpluginAutoImport({
         imports: ['vue', 'vue-router', 'pinia'],
         dts: 'types/auto-imports.d.ts',
         eslintrc: {
@@ -42,7 +43,7 @@ export default defineConfig(({ mode }): UserConfig => {
           filepath: './node_modules/.unplugin-auto-import/.eslintrc.mjs'
         }
       }),
-      Components({
+      unpluginVueComponents({
         dts: false,
         resolvers: [ElementPlusResolver()]
       }),
@@ -73,7 +74,8 @@ export default defineConfig(({ mode }): UserConfig => {
         stylelint: {
           lintCommand: 'stylelint **/*.{vue,css,scss}'
         }
-      })
+      }),
+      vueDevTools()
     ],
     build: {
       chunkSizeWarningLimit: 2000,
