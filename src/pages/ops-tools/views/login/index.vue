@@ -83,9 +83,7 @@ const toggleDark = () => {
             <el-checkbox>记住密码</el-checkbox>
             <el-link type="primary">忘记密码?</el-link>
           </div>
-          <div class="w-100%">
-            <el-button class="w-100%" type="primary" :loading="submitLoading" @click="handleSubmit"> 登录 </el-button>
-          </div>
+          <el-button class="w-100%" type="primary" :loading="submitLoading" @click="handleSubmit"> 登录 </el-button>
           <div class="other-login">
             <el-divider>其它登陆方式</el-divider>
             <div class="other-login-icon w-100% flex flex-justify-center flex-items-center">

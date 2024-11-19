@@ -153,11 +153,11 @@ nextTick(() => {
 </script>
 
 <template>
-  <div class="terminal">
-    <el-card class="container" shadow="never">
-      <div id="xterm" />
+  <div class="terminal flex">
+    <el-card class="terminal-container flex-1 bg-[#1d1e1f]!" shadow="never">
+      <div id="xterm" class="h-full" />
     </el-card>
-    <el-card class="commands" shadow="never"></el-card>
+    <el-card class="ml-15px w-260px" shadow="never"></el-card>
   </div>
 </template>
 
@@ -169,25 +169,12 @@ nextTick(() => {
 }
 
 .terminal {
-  display: flex;
-
-  .container {
-    flex: 1;
+  .terminal-container {
     height: calc(100vh - 130px);
-    background-color: #1d1e1f;
 
     :deep(.el-card__body) {
       height: 100%;
     }
-
-    #xterm {
-      height: 100%;
-    }
-  }
-
-  .commands {
-    width: 260px;
-    margin-left: 15px;
   }
 }
 </style>
