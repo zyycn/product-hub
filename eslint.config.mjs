@@ -4,6 +4,7 @@ import tseslint from 'typescript-eslint'
 import eslintPluginVue from 'eslint-plugin-vue'
 import importPlugin from 'eslint-plugin-import'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+import unocss from '@unocss/eslint-config/flat'
 
 export default tseslint.config(
   // 忽略文件
@@ -29,6 +30,8 @@ export default tseslint.config(
   ...eslintPluginVue.configs['flat/recommended'],
   // 代码风格
   eslintPluginPrettierRecommended,
+  // UnoCSS推荐配置
+  unocss,
 
   // 全局规则
   {
@@ -67,8 +70,9 @@ export default tseslint.config(
       }
     },
     rules: {
-      'vue/multi-word-component-names': 'off',
-      'no-undef': 'off'
+      'vue/multi-word-component-names': 'off', // 禁用多单词组件名
+      'unocss/order': 'error', // 强制执行类选择器的特定顺序
+      'unocss/order-attributify': 'error' // 强制执行属性选择器的特定顺序
     }
   }
 )

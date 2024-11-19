@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// eslint-disable-next-line no-undef
 const pages = __APP_PAGES__
 
 const createLink = (info: { name: string }) => {

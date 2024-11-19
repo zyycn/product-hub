@@ -9,10 +9,7 @@ interface Solar {
   toYmd(): string
 }
 
-const holidayMessagesTemplate = [
-  '革命即将胜利，同志们再摸 {d} 天就到{n}了！',
-  '距离{n}假期还有 {d} 天！'
-]
+const holidayMessagesTemplate = ['革命即将胜利，同志们再摸 {d} 天就到{n}了！', '距离{n}假期还有 {d} 天！']
 
 const motivationalQuotes = [
   '鲁迅曾经说过：如果别人看不见你的电脑屏幕，那么只要你在打字他们就会觉得你在工作。',

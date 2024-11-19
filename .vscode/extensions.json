@@ -15,6 +15,8 @@
     // i18n 插件
     "Lokalise.i18n-ally",
     // CSS 变量提示
-    "vunguyentuan.vscode-css-variables"
+    "vunguyentuan.vscode-css-variables",
+    // UnoCSS 原子化css
+    "antfu.unocss"
   ]
 }

@@ -43,25 +43,25 @@ const toggleDark = () => {
 </script>
 
 <template>
-  <div class="login">
-    <div class="left">
-      <div class="bg" />
-      <div class="content">
-        <img src="@/pages/ops-tools/assets/svg/1.svg" alt="icon" />
-        <div class="title">开箱即用的运维管理系统</div>
-        <div class="tips">
-          <p>
+  <div class="login h-screen w-screen flex select-none overflow-hidden">
+    <div class="pos-relative h-100% w-66% flex-shrink-0">
+      <div class="bg-gradient-154deg pos-absolute pos-left-none pos-top-none h-100% w-100% filter-blur-100px" />
+      <div class="h-100% w-100% flex flex-col justify-center flex-items-center -mt-55px">
+        <img class="user-drag-none animation-float h-256px" src="@/pages/ops-tools/assets/svg/1.svg" alt="icon" />
+        <div class="m-10px text-24px">开箱即用的运维管理系统</div>
+        <div class="text-14px">
+          <p class="mx-4px my-0">
             这物件嘛，用过了都说还行，倒也无惊无喜，正如世间多数事物，看似平凡，却自有其一分可取
           </p>
-          <p>-- 鲁迅</p>
+          <p class="float-right -mr-50px">-- 鲁迅</p>
         </div>
       </div>
     </div>
-    <div class="right">
-      <div class="login-content">
-        <div class="login-title">
-          <h1>欢迎回来 👋🏻</h1>
-          <span>请输入您的帐户信息以开始您的旅程</span>
+    <div class="pos-relative flex-1 bg-[var(--el-bg-color)]">
+      <div class="pos-absolute pos-left-50% pos-top-50% w-72% transform-translate--50% px-10px py-10px -mt-60px">
+        <div class="mb-30px text-14px">
+          <h1 class="mx-6px">欢迎回来 👋🏻</h1>
+          <span class="color-[var(--el-text-color-placeholder)]">请输入您的帐户信息以开始您的旅程</span>
         </div>
         <el-config-provider size="large">
           <el-form ref="loginFormRef" :rules="formRules" :model="formData">
@@ -69,14 +69,9 @@ const toggleDark = () => {
               <el-input v-model="formData.username" placeholder="请输入用户名"></el-input>
             </el-form-item>
             <el-form-item prop="password">
-              <el-input
-                ref="passwordRef"
-                v-model="formData.password"
-                :type="inputType"
-                placeholder="请输入密码"
-              >
+              <el-input ref="passwordRef" v-model="formData.password" :type="inputType" placeholder="请输入密码">
                 <template #suffix>
-                  <el-icon class="password-icon" :size="18" @click="handleToggleType">
+                  <el-icon class="cursor-pointer" :size="18" @click="handleToggleType">
                     <iconify-icon v-if="inputType === 'password'" icon="solar:eye-closed-linear" />
                     <iconify-icon v-else icon="solar:eye-linear" />
                   </el-icon>
@@ -84,18 +79,16 @@ const toggleDark = () => {
               </el-input>
             </el-form-item>
           </el-form>
-          <div class="login-option">
+          <div class="mb-20px flex flex-justify-between flex-items-center">
             <el-checkbox>记住密码</el-checkbox>
             <el-link type="primary">忘记密码?</el-link>
           </div>
-          <div class="login-btn">
-            <el-button type="primary" :loading="submitLoading" @click="handleSubmit">
-              登录
-            </el-button>
+          <div class="w-100%">
+            <el-button class="w-100%" type="primary" :loading="submitLoading" @click="handleSubmit"> 登录 </el-button>
           </div>
           <div class="other-login">
             <el-divider>其它登陆方式</el-divider>
-            <div class="other-login-icon">
+            <div class="other-login-icon w-100% flex flex-justify-center flex-items-center">
               <el-icon :size="16">
                 <iconify-icon icon="simple-icons:github" />
               </el-icon>
@@ -114,14 +107,18 @@ const toggleDark = () => {
       </div>
     </div>
 
-    <div class="logo">
+    <div class="pos-absolute pos-left-15px pos-top-15px flex flex-items-center">
       <el-icon :size="40">
         <iconify-icon icon="unjs:undocs" />
       </el-icon>
-      <span>OPS Tools</span>
+      <span class="ml-10px text-22px font-500">OPS Tools</span>
     </div>
 
-    <el-icon class="toggle-icon" :size="26" @click="toggleDark">
+    <el-icon
+      class="pos-absolute pos-right-10px pos-top-10px flex cursor-pointer flex-items-center"
+      :size="26"
+      @click="toggleDark"
+    >
       <iconify-icon v-if="!isDark" icon="openmoji:sun" />
       <iconify-icon v-else icon="openmoji:star-and-crescent" />
     </el-icon>
@@ -144,150 +141,30 @@ const toggleDark = () => {
 }
 
 .login {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  user-select: none;
-
-  .left {
-    position: relative;
-    flex-shrink: 0;
-    width: 66%;
-    height: 100%;
-
-    .bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(154deg, #07070915 30%, #006be64d, #07070915 64%);
-      filter: blur(100px);
-    }
-
-    .content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      margin-top: -55px;
-
-      img {
-        height: 256px;
-        animation: float 5s linear 0s infinite;
-        -webkit-user-drag: none;
-      }
-
-      .title {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 24px;
-      }
-
-      .tips {
-        font-size: 14px;
-
-        p {
-          margin: 4px 0;
-        }
-
-        p:nth-child(2) {
-          float: right;
-          margin-right: -50px;
-        }
-      }
-    }
+  .bg-gradient-154deg {
+    background: linear-gradient(154deg, #07070915 30%, #006be64d, #07070915 64%);
   }
 
-  .right {
-    position: relative;
-    flex: 1;
-    background-color: var(--el-bg-color);
+  .animation-float {
+    animation: float 5s linear 0s infinite;
+  }
 
-    .login-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 72%;
-      padding: 10px;
-      margin-top: -60px;
-      transform: translate(-50%, -50%);
+  .user-drag-none {
+    -webkit-user-drag: none;
+  }
 
-      .login-title {
-        margin-bottom: 30px;
-        font-size: 14px;
-
-        h1 {
-          margin: 6px 0;
-        }
-
-        span {
-          color: var(--el-text-color-secondary);
-        }
-      }
-
-      .password-icon {
-        cursor: pointer;
-      }
-
-      .login-option {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 20px;
-      }
-
-      .login-btn {
-        width: 100%;
-
-        .el-button {
-          width: 100%;
-        }
-      }
-
-      .other-login {
-        :deep(.el-divider__text) {
-          padding: 0 30px;
-          font-size: 12px;
-          color: var(--el-text-color-secondary);
-        }
-
-        .other-login-icon {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-
-          .el-icon {
-            margin: 0 5px;
-            color: var(--el-text-color-regular);
-          }
-        }
-      }
+  .other-login {
+    :deep(.el-divider__text) {
+      padding: 0 30px;
+      font-size: 12px;
+      color: var(--el-text-color-secondary);
     }
-  }
 
-  .toggle-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-  }
-
-  .logo {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    display: flex;
-    align-items: center;
-
-    span {
-      margin-left: 10px;
-      font-size: 22px;
-      font-weight: 500;
+    .other-login-icon {
+      .el-icon {
+        margin: 0 5px;
+        color: var(--el-text-color-regular);
+      }
     }
   }
 }

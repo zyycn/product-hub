@@ -10,11 +10,7 @@ const { collapse } = storeToRefs(store)
 <template>
   <div class="navbar">
     <div class="left">
-      <el-icon
-        :size="16"
-        :class="{ 'el-icon--collapsed': collapse }"
-        @click="store.setCollapse(!collapse)"
-      >
+      <el-icon :size="16" :class="{ 'el-icon--collapsed': collapse }" @click="store.setCollapse(!collapse)">
         <iconify-icon icon="clarity:collapse-line" />
       </el-icon>
 

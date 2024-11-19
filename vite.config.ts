@@ -9,6 +9,7 @@ import unpluginAutoImport from 'unplugin-auto-import/vite'
 import unpluginVueComponents from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import vueDevTools from 'vite-plugin-vue-devtools'
+import unoCSS from 'unocss/vite'
 import buildInfo from './config/build-info'
 import mpaEntry from './config/mpa-entry'
 
@@ -35,6 +36,8 @@ export default defineConfig(({ mode }): UserConfig => {
     plugins: [
       vue(),
       vueJsx(),
+      vueDevTools(),
+      unoCSS(),
       unpluginAutoImport({
         imports: ['vue', 'vue-router', 'pinia'],
         dts: 'types/auto-imports.d.ts',
@@ -74,8 +77,7 @@ export default defineConfig(({ mode }): UserConfig => {
         stylelint: {
           lintCommand: 'stylelint **/*.{vue,css,scss}'
         }
-      }),
-      vueDevTools()
+      })
     ],
     build: {
       chunkSizeWarningLimit: 2000,

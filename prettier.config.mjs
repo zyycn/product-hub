@@ -4,7 +4,8 @@ export default {
   bracketSpacing: true,
   arrowParens: 'avoid',
   trailingComma: 'none',
-  printWidth: 100,
+  printWidth: 120,
+  proseWrap: 'never',
   endOfLine: 'lf',
   overrides: [
     {
