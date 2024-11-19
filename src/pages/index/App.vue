@@ -9,11 +9,11 @@ const createLink = (info: { name: string }) => {
 </script>
 
 <template>
-  <div class="dev-page">
-    <div class="page-header">
-      <h3 class="title">项目路由地图：</h3>
+  <div class="dev-page box-border h-screen w-screen overflow-hidden px-30px py-10px">
+    <div class="flex flex-justify-between flex-items-center">
+      <h3>项目路由地图：</h3>
     </div>
-    <el-table :data="pages" border>
+    <el-table class="border-rounded-10px text-12px" :data="pages" stripe border size="large">
       <el-table-column label="页面名称">
         <template #default="{ row }">
           {{ row.data.title }}
@@ -32,14 +32,6 @@ const createLink = (info: { name: string }) => {
 
 <style lang="scss" scoped>
 .dev-page {
-  padding: 10px 30px;
-  overflow: hidden;
-  font-family: 'Microsoft YaHei', sans-serif;
-
-  .page-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  background: linear-gradient(154deg, #07070915 30%, #006be64d, #07070915 64%);
 }
 </style>
