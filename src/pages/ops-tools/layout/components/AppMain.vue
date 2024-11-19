@@ -1,14 +1,7 @@
-<script setup lang="ts"></script>
-
 <template>
-  <div class="app-main">
-    <router-view />
-  </div>
+  <router-view v-slot="{ Component }">
+    <transition name="fade" mode="out-in" appear>
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
-
-<style scoped lang="scss">
-.app-main {
-  width: 100%;
-  height: 100%;
-}
-</style>

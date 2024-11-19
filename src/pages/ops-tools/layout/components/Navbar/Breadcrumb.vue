@@ -11,12 +11,14 @@ const routeMatched = computed(() => {
 <template>
   <div class="breadcrumb">
     <el-breadcrumb :separator-icon="ArrowRight">
-      <el-breadcrumb-item v-for="item in routeMatched" :key="item.path" :to="{ path: item.path }">
-        <el-icon :size="18">
-          <iconify-icon :icon="item.meta.icon" />
-        </el-icon>
-        <span>{{ item.meta.title }}</span>
-      </el-breadcrumb-item>
+      <transition-group name="breadcrumb" appear>
+        <el-breadcrumb-item v-for="item in routeMatched" :key="item.path" :to="{ path: item.path }">
+          <el-icon :size="18">
+            <iconify-icon :icon="item.meta.icon" />
+          </el-icon>
+          <span>{{ item.meta.title }}</span>
+        </el-breadcrumb-item>
+      </transition-group>
     </el-breadcrumb>
   </div>
 </template>
@@ -25,7 +27,7 @@ const routeMatched = computed(() => {
 .breadcrumb {
   :deep(.el-breadcrumb) {
     .el-breadcrumb__inner {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       font-size: 14px;
     }

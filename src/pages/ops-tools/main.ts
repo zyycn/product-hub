@@ -8,8 +8,6 @@ import ProdConsole from '@/utils/prod-console'
 import Nprogress from '@/utils/nprogress'
 import Iconify from '@/utils/iconify'
 
-import 'element-plus/theme-chalk/dark/css-vars.css'
-
 import 'normalize.css'
 import './styles/index.scss'
 
