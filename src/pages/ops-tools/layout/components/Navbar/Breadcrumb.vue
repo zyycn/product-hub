@@ -2,7 +2,6 @@
 import { ArrowRight } from '@element-plus/icons-vue'
 
 const route = useRoute()
-
 const routeMatched = computed(() => {
   return route?.matched.filter(item => item.meta && item.meta.title)
 })
