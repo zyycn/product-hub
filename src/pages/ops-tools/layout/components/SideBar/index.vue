@@ -51,6 +51,7 @@ const avtiveRoute = computed(() => {
 
   .el-sub-menu__title,
   .el-menu-item {
+    margin-top: 4px;
     color: var(--menu-item-color);
     border-radius: 8px;
 
@@ -90,13 +91,6 @@ const avtiveRoute = computed(() => {
       border-radius: 8px;
     }
 
-    .el-sub-menu__title,
-    .el-menu-tooltip__trigger {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
     .el-sub-menu.is-active {
       color: var(--menu-item-active-color);
       background-color: var(--menu-item-active-background-color);
@@ -108,11 +102,6 @@ const avtiveRoute = computed(() => {
   &.el-menu {
     @include el-menu;
 
-    .el-sub-menu__title,
-    .el-menu-item {
-      margin-top: 4px;
-    }
-
     &:not(.el-menu--collapse) {
       width: 224px;
     }
@@ -121,11 +110,11 @@ const avtiveRoute = computed(() => {
   &.el-popper .el-menu {
     @include el-menu;
 
-    width: 224px;
-
-    .el-sub-menu__title {
-      margin-top: 4px;
+    .el-menu-item:first-child {
+      margin-top: 0;
     }
+
+    width: 224px;
   }
 }
 </style>

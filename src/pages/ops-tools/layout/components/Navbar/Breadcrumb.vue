@@ -21,15 +21,23 @@ const routeMatched = computed(() => {
 </template>
 
 <style scoped lang="scss">
-.breadcrumb {
-  :deep(.el-breadcrumb) {
-    .el-breadcrumb__inner {
-      display: flex;
-      align-items: center;
-      font-size: 14px;
-    }
+:deep(.el-breadcrumb) {
+  .el-breadcrumb__item {
+    align-items: normal;
   }
 
+  .el-breadcrumb__inner {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .el-breadcrumb__separator {
+    font-size: 16px;
+  }
+}
+
+.breadcrumb {
   .el-icon {
     margin-right: 6px;
   }
