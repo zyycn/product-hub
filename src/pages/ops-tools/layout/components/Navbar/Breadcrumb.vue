@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ArrowRight } from '@element-plus/icons-vue'
-
 const route = useRoute()
 const routeMatched = computed(() => {
   return route?.matched.filter(item => item.meta && item.meta.title)
@@ -9,7 +7,7 @@ const routeMatched = computed(() => {
 
 <template>
   <div class="breadcrumb">
-    <el-breadcrumb :separator-icon="ArrowRight">
+    <el-breadcrumb>
       <transition-group name="breadcrumb" appear>
         <el-breadcrumb-item v-for="item in routeMatched" :key="item.path" :to="{ path: item.path }">
           <el-icon :size="18">
