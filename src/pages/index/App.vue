@@ -11,7 +11,7 @@ const createLink = (info: { name: string }) => {
 <template>
   <div class="dev-page pos-relative box-border h-screen w-screen overflow-hidden px-30px pb-10px">
     <div class="flex flex-justify-start flex-items-center">
-      <h3>PROJECT PAGES：</h3>
+      <h3 class="c-white">PROJECT PAGES：</h3>
       <el-icon :size="22">
         <iconify-icon icon="twemoji:rocket"></iconify-icon>
       </el-icon>
@@ -45,16 +45,17 @@ const createLink = (info: { name: string }) => {
 
 <style lang="scss" scoped>
 .dev-page {
+  background-color: rgb(189 192 186);
+
   &::after {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
     content: '';
-    background: linear-gradient(154deg, #07070915 30%, #00b8e64d, #07070915 64%);
-    filter: blur(100px);
+    background: url('@/pages/index/assets/imgs/texture.png');
   }
 
   .el-table {
@@ -64,7 +65,7 @@ const createLink = (info: { name: string }) => {
     --el-fill-color-light: transparent;
     --el-fill-color-lighter: transparent;
 
-    background: linear-gradient(154deg, #9797a115 30%, #d4dce64d, #b1b1b815 100%);
+    background: linear-gradient(154deg, #9797a115 30%, #a3a9af4d, #b1b1b815 100%);
   }
 }
 </style>
