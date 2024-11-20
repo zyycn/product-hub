@@ -12,7 +12,7 @@ const toggleDark = () => {
 </script>
 
 <template>
-  <div class="controller">
+  <div class="flex flex-items-center">
     <el-icon :size="28" @click="toggle">
       <iconify-icon v-if="!isFullscreen" icon="openmoji:toggle-button" />
       <iconify-icon v-else icon="openmoji:toggle-button-state-b" />
@@ -23,7 +23,7 @@ const toggleDark = () => {
       <iconify-icon v-else icon="openmoji:star-and-crescent" />
     </el-icon>
 
-    <el-avatar :size="34" shape="square">
+    <el-avatar class="ml-10px" :size="34" shape="square">
       <el-icon :size="34">
         <iconify-icon icon="openmoji:hacker-cat" />
       </el-icon>
@@ -32,17 +32,8 @@ const toggleDark = () => {
 </template>
 
 <style scoped lang="scss">
-.controller {
-  display: flex;
-  align-items: center;
-
-  .el-icon {
-    margin: 0 5px;
-    cursor: pointer;
-  }
-
-  .el-avatar {
-    margin-left: 10px;
-  }
+.el-icon {
+  margin: 0 5px;
+  cursor: pointer;
 }
 </style>

@@ -154,7 +154,7 @@ nextTick(() => {
 
 <template>
   <div class="terminal flex">
-    <el-card class="terminal-container flex-1 bg-[#1d1e1f]!" shadow="never">
+    <el-card class="terminal-container h-[calc(100vh-130px)] flex-1 bg-[#1d1e1f]!" shadow="never">
       <div id="xterm" class="h-full" />
     </el-card>
     <el-card class="ml-15px w-260px" shadow="never"></el-card>
@@ -170,8 +170,6 @@ nextTick(() => {
 
 .terminal {
   .terminal-container {
-    height: calc(100vh - 130px);
-
     :deep(.el-card__body) {
       height: 100%;
     }

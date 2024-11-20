@@ -4,18 +4,20 @@ import tips from '@/utils/slack-off-tips'
 
 <template>
   <div class="dashboard">
-    <el-row>
+    <el-row class="mb-15px">
       <el-col :span="24">
-        <el-card class="welcome" shadow="never">
-          <div class="content">
-            <div class="avatar">
+        <el-card shadow="never">
+          <div class="flex flex-items-center">
+            <div class="mr-15px">
               <el-icon :size="50">
                 <iconify-icon icon="openmoji:hacker-cat" />
               </el-icon>
             </div>
-            <div class="tips">
-              <span>{{ tips[0] }}</span>
-              <span>{{ tips[1] }} {{ tips[2] }} {{ tips[3] }}</span>
+            <div class="flex flex-col flex-justify-center flex-items-start">
+              <span class="mb-10px text-20px fw-bold">{{ tips[0] }}</span>
+              <span class="text-14px color-[var(--el-text-color-secondary)]">
+                {{ tips[1] }} {{ tips[2] }} {{ tips[3] }}
+              </span>
             </div>
           </div>
         </el-card>
@@ -23,11 +25,11 @@ import tips from '@/utils/slack-off-tips'
     </el-row>
     <el-row :gutter="10">
       <el-col :span="7">
-        <el-card class="server" shadow="never">
+        <el-card shadow="never">
           <template #header>
             <span>服务器信息</span>
           </template>
-          <div class="content">
+          <div>
             <p>运行时间: 212d 3h 9m</p>
             <p>系统负载: 1min: 0.50 | 5min:0.17 | 15min:0.09</p>
             <p>OS: debian 12.7 (linux 5.10.0-15-arm64 aarch64)</p>
@@ -69,43 +71,9 @@ import tips from '@/utils/slack-off-tips'
         margin-right: 8px;
       }
     }
-  }
 
-  .el-row {
-    margin-bottom: 15px;
-  }
-
-  .welcome {
-    .content {
-      display: flex;
-      align-items: center;
-
-      .avatar {
-        margin-right: 15px;
-      }
-
-      .tips {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-
-        span:nth-child(1) {
-          margin-bottom: 10px;
-          font-size: 20px;
-          font-weight: bold;
-        }
-
-        span:nth-child(2) {
-          font-size: 14px;
-          color: var(--el-text-color-secondary);
-        }
-      }
-    }
-  }
-
-  .server {
-    .content {
+    .el-card__body {
+      height: 100%;
       font-size: 14px;
 
       p {

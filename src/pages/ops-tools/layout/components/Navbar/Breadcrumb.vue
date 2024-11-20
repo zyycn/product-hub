@@ -10,7 +10,7 @@ const routeMatched = computed(() => {
     <el-breadcrumb>
       <transition-group name="breadcrumb" appear>
         <el-breadcrumb-item v-for="item in routeMatched" :key="item.path" :to="{ path: item.path }">
-          <el-icon :size="18">
+          <el-icon class="mr-6px" :size="18">
             <iconify-icon :icon="item.meta.icon" />
           </el-icon>
           <span>{{ item.meta.title }}</span>
@@ -34,12 +34,6 @@ const routeMatched = computed(() => {
 
   .el-breadcrumb__separator {
     font-size: 16px;
-  }
-}
-
-.breadcrumb {
-  .el-icon {
-    margin-right: 6px;
   }
 }
 </style>

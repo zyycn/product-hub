@@ -8,42 +8,22 @@ const { collapse } = storeToRefs(store)
 </script>
 
 <template>
-  <div class="navbar">
-    <div class="left">
-      <el-icon :size="16" :class="{ 'el-icon--collapsed': collapse }" @click="store.setCollapse(!collapse)">
+  <div class="w-full flex flex-justify-between flex-items-center">
+    <div class="flex flex-items-center">
+      <el-icon
+        :size="16"
+        :class="{ 'transform-rotate-90deg': collapse }"
+        class="mr-10px transform-rotate--90deg cursor-pointer"
+        @click="store.setCollapse(!collapse)"
+      >
         <iconify-icon icon="clarity:collapse-line" />
       </el-icon>
 
       <Breadcrumb />
     </div>
 
-    <div class="right">
+    <div class="flex flex-items-center">
       <Controller />
     </div>
   </div>
 </template>
-
-<style scoped lang="scss">
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-
-  .left,
-  .right {
-    display: flex;
-    align-items: center;
-  }
-
-  .el-icon {
-    margin-right: 20px;
-    cursor: pointer;
-    transform: rotateZ(-90deg);
-
-    &--collapsed {
-      transform: rotateZ(90deg);
-    }
-  }
-}
-</style>

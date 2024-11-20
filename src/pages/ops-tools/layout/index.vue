@@ -6,61 +6,31 @@ import SideBar from './components/SideBar/index.vue'
 </script>
 
 <template>
-  <div class="layout">
+  <el-container>
+    <el-aside class="h-screen w-auto overflow-hidden b-r-1 border-r-color-[var(--el-menu-border-color)] b-r-solid">
+      <SideBar />
+    </el-aside>
+
     <el-container>
-      <el-aside>
-        <SideBar />
-      </el-aside>
+      <el-header class="h-50px flex flex-items-center b-b-1 border-b-color-[var(--el-menu-border-color)] b-b-solid">
+        <Navbar />
+      </el-header>
 
-      <el-container>
-        <el-header>
-          <Navbar />
-        </el-header>
+      <el-scrollbar class="h-[calc(100vh-50px)] bg-[var(--background-deep)]">
+        <el-main class="h-full min-h-[calc(100vh-110px)] flex-initial overflow-hidden p-12px p-b-0">
+          <AppMain />
+        </el-main>
 
-        <el-scrollbar class="layout-main">
-          <el-main>
-            <AppMain />
-          </el-main>
-
-          <el-footer>
-            <FooterBar />
-          </el-footer>
-        </el-scrollbar>
-      </el-container>
+        <el-footer>
+          <FooterBar />
+        </el-footer>
+      </el-scrollbar>
     </el-container>
-  </div>
+  </el-container>
 </template>
 
 <style scoped lang="scss">
-.layout {
-  .el-aside {
-    width: auto !important;
-    height: 100vh;
-    overflow: hidden;
-    border-right: 0.0625rem solid var(--el-menu-border-color);
-  }
-
-  .el-header {
-    --el-header-padding: 0 15px;
-
-    display: flex;
-    align-items: center;
-    height: 50px !important;
-    border-bottom: 1px solid var(--el-menu-border-color);
-  }
-
-  .layout-main {
-    height: calc(100vh - 50px);
-    background-color: var(--background-deep);
-
-    .el-main {
-      flex: initial;
-      height: 100%;
-      min-height: calc(100vh - 110px);
-      padding: 12px;
-      padding-bottom: 0 !important;
-      overflow: hidden;
-    }
-  }
+.el-header {
+  --el-header-padding: 0 15px;
 }
 </style>
