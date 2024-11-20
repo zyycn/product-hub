@@ -25,10 +25,10 @@ const avtiveRoute = computed(() => {
     <el-scrollbar>
       <el-menu
         class="menu-popper"
+        popper-class="menu-popper"
         :collapse="collapse"
         :default-active="avtiveRoute.path"
         :popper-offset="15"
-        popper-class="menu-popper"
         router
       >
         <Menu :routes="routes" />
