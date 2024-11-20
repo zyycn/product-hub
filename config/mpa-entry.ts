@@ -4,7 +4,7 @@ const pages: Page[] = [
   {
     name: 'index',
     entry: '/src/pages/index/main.ts',
-    data: { title: 'PROJECT PAGES', icon: '/src/pages/index/public/favicon.svg', hidden: true }
+    data: { title: 'PROJECT PAGES（DEV）', icon: '/src/pages/index/public/favicon.svg', hidden: true }
   },
   {
     name: 'ops-tools',
