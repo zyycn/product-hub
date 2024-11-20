@@ -11,7 +11,7 @@ const createLink = (info: { name: string }) => {
 <template>
   <div class="dev-page pos-relative box-border h-screen w-screen overflow-hidden px-30px pb-10px">
     <div class="flex flex-justify-start flex-items-center">
-      <h3 class="c-white">PROJECT PAGES：</h3>
+      <h3>PROJECT PAGES：</h3>
       <el-icon :size="22">
         <iconify-icon icon="twemoji:rocket"></iconify-icon>
       </el-icon>
@@ -45,7 +45,7 @@ const createLink = (info: { name: string }) => {
 
 <style lang="scss" scoped>
 .dev-page {
-  background-color: rgb(189 192 186);
+  background-color: #fffffb;
 
   &::after {
     position: fixed;
@@ -65,7 +65,7 @@ const createLink = (info: { name: string }) => {
     --el-fill-color-light: transparent;
     --el-fill-color-lighter: transparent;
 
-    background: linear-gradient(154deg, #9797a115 30%, #a3a9af4d, #b1b1b815 100%);
+    background: linear-gradient(154deg, #9e9ea115 30%, #dee1e44d, #b7b7b915 100%);
   }
 }
 </style>
