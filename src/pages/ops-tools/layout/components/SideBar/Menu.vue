@@ -31,14 +31,14 @@ const iconSize = 18
             </el-icon>
             <span>{{ item.meta.title }}</span>
           </template>
-          <!-- 循环二级 -->
+
           <Menu :routes="item.children" />
         </el-sub-menu>
 
         <Menu v-else :key="'el-sub-menu-children' + index" :routes="item.children" />
       </template>
 
-      <!-- 没有子菜单的 -->
+      <!-- No Children -->
       <el-menu-item v-else :key="'el-menu-item' + index" :popper-offset="20" :index="item.path">
         <el-icon :size="iconSize">
           <iconify-icon :icon="item.meta.icon" />
