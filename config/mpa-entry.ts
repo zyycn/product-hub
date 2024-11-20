@@ -4,12 +4,12 @@ const pages: Page[] = [
   {
     name: 'index',
     entry: '/src/pages/index/main.ts',
-    data: { title: '项目地图（开发）', icon: '' }
+    data: { title: 'PROJECT PAGES', icon: '/src/pages/index/public/favicon.svg', hidden: true }
   },
   {
     name: 'ops-tools',
     entry: '/src/pages/ops-tools/main.ts',
-    data: { title: '运维工具', icon: '/src/pages/ops-tools/public/favicon.svg' }
+    data: { title: 'OPS Tools', icon: '/src/pages/ops-tools/public/favicon.svg' }
   }
 ]
 
