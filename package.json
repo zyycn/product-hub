@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && npm run lint && npm run lint:style && vite build",
-    "build:test": "vite build --mode test",
-    "build:production": "npm run build --mode production",
-    "build:preview": "vite build && vite preview",
+    "build:test": "npm run build -- --mode test",
+    "build:production": "npm run build -- --mode production",
+    "preview": "vite preview",
     "lint": "eslint src --fix",
     "lint:style": "stylelint **/*.{vue,css,scss} --fix",
     "prepare": "husky",
