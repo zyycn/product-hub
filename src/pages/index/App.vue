@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const pages = __APP_INFO__.PAGES.filter(item => !item.data?.hidden)
+const pages = __APP_INFO__.PAGES
 const createLink = (info: { name: string }) => {
   return new URL(`${info.name}.html#/`, window.location.href).href
 }
@@ -8,9 +8,9 @@ const createLink = (info: { name: string }) => {
 <template>
   <div class="dev-page pos-relative box-border h-screen w-screen overflow-hidden px-30px pb-10px">
     <div class="flex flex-justify-start flex-items-center">
-      <h3>PROJECT PAGES：</h3>
+      <h3 class="ml-2px">PROJECT PAGES：</h3>
       <el-icon :size="22">
-        <iconify-icon icon="twemoji:rocket" />
+        <iconify-icon icon="twemoji:sparkles" />
       </el-icon>
     </div>
     <el-table
@@ -23,7 +23,8 @@ const createLink = (info: { name: string }) => {
         <template #default="{ row }">
           <div class="flex flex-items-center">
             <el-icon :size="22" class="mr-10px">
-              <iconify-icon icon="openmoji:glowing-star" />
+              <img v-if="row.data.icon" :src="row.data.icon" alt="icon" />
+              <iconify-icon v-else icon="openmoji:glowing-star" />
             </el-icon>
             <span>{{ row.data.title }}</span>
           </div>
