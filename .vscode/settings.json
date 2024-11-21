@@ -6,9 +6,5 @@
   "css.validate": false,
   "scss.validate": false,
   "stylelint.validate": ["vue", "css", "scss"],
-
-  "vue.server.hybridMode": true,
-  "vue.codeLens.enabled": false,
-
   "unocss.autocomplete.matchType": "fuzzy"
 }
