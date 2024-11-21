@@ -8,7 +8,7 @@ on:
 jobs:
   build-and-deploy:
     # 服务器环境：最新版 Ubuntu
-    runs-on: ubuntu-latest
+    runs-on: node-22
     steps:
       # 拉取代码
       - name: Checkout
@@ -19,7 +19,7 @@ jobs:
       - name: Build
         run: |
           npm i pnpm -g
-          pnpm i  # 安装依赖
+          pnpm dev && pnpm i  # 安装依赖
           pnpm build:production  # 执行打包
 
       # 部署到 GitHub Pages
