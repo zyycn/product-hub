@@ -1,8 +1,7 @@
 <script setup lang="ts">
 const pages = __APP_INFO__.PAGES.filter(item => !item.data?.hidden)
 const createLink = (info: { name: string }) => {
-  const appName = ''
-  return new URL(`${appName}/${info.name}.html#/`, window.location.origin).href
+  return new URL(`${info.name}.html#/`, window.location.href).href
 }
 </script>
 
