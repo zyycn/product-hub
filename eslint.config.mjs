@@ -66,6 +66,7 @@ export default tseslint.config(
         }
       },
       globals: {
+        __APP_INFO__: true,
         ...(await import('./node_modules/.unplugin-auto-import/.eslintrc.mjs')).default.globals
       }
     },

@@ -1,10 +1,8 @@
 <script setup lang="ts">
-// eslint-disable-next-line no-undef
-const pages = __APP_PAGES__.filter(item => !item.data?.hidden)
-
+const pages = __APP_INFO__.PAGES.filter(item => !item.data?.hidden)
 const createLink = (info: { name: string }) => {
   const appName = ''
-  return `${window.location.protocol}//${window.location.host}${appName}/${info.name}.html#/`
+  return new URL(`${appName}/${info.name}.html#/`, window.location.origin).href
 }
 </script>
 

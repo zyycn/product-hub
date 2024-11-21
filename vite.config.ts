@@ -10,7 +10,7 @@ import unpluginVueComponents from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import unoCSS from 'unocss/vite'
-import buildInfo from './config/build-info'
+import commitInfo from './config/commit-info'
 import mpaEntry from './config/mpa-entry'
 
 export default defineConfig(({ mode }): UserConfig => {
@@ -18,8 +18,7 @@ export default defineConfig(({ mode }): UserConfig => {
   return {
     root: process.cwd(),
     define: {
-      __APP_INFO__: JSON.stringify({ ...env, ...buildInfo }),
-      __APP_PAGES__: JSON.stringify(mpaEntry)
+      __APP_INFO__: JSON.stringify({ ...env, ...commitInfo, PAGES: mpaEntry })
     },
     resolve: {
       alias: {
