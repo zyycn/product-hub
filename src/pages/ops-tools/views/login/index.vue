@@ -53,7 +53,10 @@ const toggleDark = () => {
           <p class="mx-4px my-0">
             这物件嘛，用过了都说还行，倒也无惊无喜，正如世间多数事物，看似平凡，却自有其一分可取
           </p>
-          <p class="float-right -mr-50px">-- 鲁迅</p>
+          <p class="float-right flex flex-items-center -mr-55px">
+            <span>-- 鲁迅</span>
+            <iconify-icon icon="twemoji:zany-face" />
+          </p>
         </div>
       </div>
     </div>
