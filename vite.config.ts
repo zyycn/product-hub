@@ -17,7 +17,6 @@ export default defineConfig(({ mode }): UserConfig => {
   const env = loadEnv(mode, process.cwd(), '')
   return {
     root: process.cwd(),
-    base: './',
     define: {
       __APP_INFO__: JSON.stringify({ ...env, ...commitInfo, PAGES: mpaEntry })
     },
