@@ -1,12 +1,10 @@
-name:
-  CI
-  # 触发条件：在 push 到 main/master 分支后，新的 Github 项目 应该都是 main，而之前的项目一般都是 master
+name: CI
+
 on:
   push:
     branches:
       - main
 
-  # 任务
 jobs:
   build-and-deploy:
     # 服务器环境：最新版 Ubuntu
@@ -20,6 +18,7 @@ jobs:
       # 生成静态文件
       - name: Build
         run: |
+          npm i pnpm
           pnpm i  # 安装依赖
           pnpm build:production  # 执行打包
 
