@@ -1,5 +1,10 @@
 <script setup lang="ts">
-const pages = __APP_INFO__.PAGES
+const pages = __APP_INFO__.PAGES.map(page => {
+  return {
+    ...page,
+    iconLink: new URL(page.data?.icon, import.meta.url).href
+  }
+})
 const createLink = (info: { name: string }) => {
   return new URL(`${info.name}.html#/`, window.location.href).href
 }
@@ -23,8 +28,7 @@ const createLink = (info: { name: string }) => {
         <template #default="{ row }">
           <div class="flex flex-items-center">
             <el-icon :size="22" class="mr-10px">
-              <img v-if="row.data.icon" :src="row.data.icon" alt="icon" />
-              <iconify-icon v-else icon="openmoji:glowing-star" />
+              <iconify-icon icon="openmoji:glowing-star" />
             </el-icon>
             <span>{{ row.data.title }}</span>
           </div>
