@@ -16,7 +16,7 @@ const createLink = (info: { name: string }) => {
         <iconify-icon icon="twemoji:rocket"></iconify-icon>
       </el-icon>
     </div>
-    <el-table class="border-rounded-10px text-12px" :data="pages" stripe size="large">
+    <el-table class="pos-relative pos-z-2 border-rounded-10px text-12px" :data="pages" stripe size="large">
       <el-table-column label="页面名称">
         <template #default="{ row }">
           <div class="flex flex-items-center">
@@ -45,10 +45,8 @@ const createLink = (info: { name: string }) => {
 
 <style lang="scss" scoped>
 .dev-page {
-  background-color: #fffffb;
-
   &::after {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 0;
@@ -64,8 +62,7 @@ const createLink = (info: { name: string }) => {
     --el-border-color-lighter: transparent;
     --el-fill-color-light: transparent;
     --el-fill-color-lighter: transparent;
-
-    background: linear-gradient(154deg, #9e9ea115 30%, #dee1e44d, #b7b7b915 100%);
+    background-color: #fffffb;
   }
 }
 </style>
