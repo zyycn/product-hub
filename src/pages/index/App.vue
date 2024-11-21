@@ -13,10 +13,15 @@ const createLink = (info: { name: string }) => {
     <div class="flex flex-justify-start flex-items-center">
       <h3>PROJECT PAGES：</h3>
       <el-icon :size="22">
-        <iconify-icon icon="twemoji:rocket"></iconify-icon>
+        <iconify-icon icon="twemoji:rocket" />
       </el-icon>
     </div>
-    <el-table class="pos-relative pos-z-2 border-rounded-10px text-12px" :data="pages" stripe size="large">
+    <el-table
+      class="pos-relative pos-z-2 b b-color-[#f4f4f5] border-rounded-10px b-solid bg-[#fff] text-12px"
+      :data="pages"
+      stripe
+      size="large"
+    >
       <el-table-column label="页面名称">
         <template #default="{ row }">
           <div class="flex flex-items-center">
@@ -62,7 +67,6 @@ const createLink = (info: { name: string }) => {
     --el-border-color-lighter: transparent;
     --el-fill-color-light: transparent;
     --el-fill-color-lighter: transparent;
-    background-color: #fffffb;
   }
 }
 </style>
