@@ -79,9 +79,9 @@ export default defineConfig(({ mode }): UserConfig => {
       chunkSizeWarningLimit: 2000,
       rollupOptions: {
         output: {
-          chunkFileNames: 'static/js/[name]-[hash].js',
-          entryFileNames: 'static/js/[name]-[hash].js',
-          assetFileNames: 'static/[ext]/[name]-[hash].[ext]'
+          assetFileNames: 'static/[ext]/asset-[name]-[hash].[ext]',
+          chunkFileNames: 'static/js/chunk-[name]-[hash].js',
+          entryFileNames: 'static/js/entry-[name]-[hash].js'
         }
       },
       minify: 'terser',
