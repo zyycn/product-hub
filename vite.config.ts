@@ -39,11 +39,7 @@ export default defineConfig(({ mode }): UserConfig => {
       unoCSS(),
       unpluginAutoImport({
         imports: ['vue', 'vue-router', 'pinia'],
-        dts: 'types/auto-imports.d.ts',
-        eslintrc: {
-          enabled: true,
-          filepath: './node_modules/.unplugin-auto-import/.eslintrc.mjs'
-        }
+        dts: 'types/auto-imports.d.ts'
       }),
       unpluginVueComponents({
         dts: false,

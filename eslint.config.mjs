@@ -66,11 +66,11 @@ export default tseslint.config(
         }
       },
       globals: {
-        __APP_INFO__: true,
-        ...(await import('./node_modules/.unplugin-auto-import/.eslintrc.mjs')).default.globals
+        __APP_INFO__: true
       }
     },
     rules: {
+      'no-undef': 'off', // 禁止未定义的变量，处理自动导入问题，TS环境下可禁用
       'vue/multi-word-component-names': 'off', // 禁用多单词组件名
       'unocss/order': 'error', // 强制执行类选择器的特定顺序
       'unocss/order-attributify': 'error' // 强制执行属性选择器的特定顺序
