@@ -18,8 +18,8 @@ jobs:
       # 生成静态文件
       - name: Build
         run: |
-          npm i pnpm -g
-          pnpm dev && pnpm i  # 安装依赖
+          npm i pnpm -g && pnpm i # 安装依赖
+          pnpm dev
           pnpm build:production  # 执行打包
 
       # 部署到 GitHub Pages
