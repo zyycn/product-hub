@@ -109,11 +109,6 @@
       "prettier --cache --write"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "volta": {
     "node": "22.11.0"
   }
