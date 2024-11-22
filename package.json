@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && pnpm lint && pnpm lint:style && vite build",
-    "build:test": "pnpm build -- --mode test --",
-    "build:production": "pnpm build -- --mode production --",
+    "build:test": "pnpm build -- --mode test",
+    "build:production": "pnpm build -- --mode production",
     "preview": "vite preview",
     "lint": "eslint src --fix",
     "lint:style": "stylelint **/*.{vue,css,scss} --fix",
@@ -48,6 +48,7 @@
     "@unocss/preset-uno": "^0.64.1",
     "@vitejs/plugin-vue": "^5.2.0",
     "@vitejs/plugin-vue-jsx": "^4.1.0",
+    "commander": "^12.1.0",
     "eslint": "^9.15.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",

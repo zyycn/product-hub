@@ -10,8 +10,8 @@ import unpluginVueComponents from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import unoCSS from 'unocss/vite'
+import mpaConfig from './config/mpa-config'
 import commitInfo from './config/commit-info'
-import mpaEntry from './config/mpa-entry'
 
 export default defineConfig(({ mode }): UserConfig => {
   const env = loadEnv(mode, process.cwd(), '')
@@ -19,7 +19,7 @@ export default defineConfig(({ mode }): UserConfig => {
     root: process.cwd(),
     base: './',
     define: {
-      __APP_INFO__: JSON.stringify({ ...env, ...commitInfo, PAGES: mpaEntry })
+      __APP_INFO__: JSON.stringify({ ...env, ...commitInfo, PAGES: mpaConfig.pages })
     },
     resolve: {
       alias: {
@@ -46,13 +46,7 @@ export default defineConfig(({ mode }): UserConfig => {
         dts: false,
         resolvers: [ElementPlusResolver()]
       }),
-      createMpaPlugin({
-        htmlMinify: true,
-        verbose: false,
-        template: 'config/mpa-template.html',
-        pages: mpaEntry,
-        rewrites: [{ from: /^\/$/, to: '/index.html' }]
-      }),
+      createMpaPlugin(mpaConfig),
       viteCompression({
         verbose: false,
         deleteOriginFile: false,
