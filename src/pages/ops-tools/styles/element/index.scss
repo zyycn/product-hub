@@ -1,0 +1,15 @@
+@use './theme/dark';
+@use './theme/light';
+
+.el-card {
+  --el-card-border-radius: 8px !important;
+
+  .el-card__header {
+    padding: calc(var(--el-card-padding) - 4px) var(--el-card-padding);
+    font-weight: bold;
+  }
+
+  .el-card__body {
+    box-sizing: border-box;
+  }
+}
