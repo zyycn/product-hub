@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite serve",
     "build": "vue-tsc -b && pnpm lint && pnpm lint:style && vite build",
-    "build:test": "pnpm build -- --mode test",
-    "build:production": "pnpm build -- --mode production",
+    "build:test": "pnpm build --mode test",
+    "build:production": "pnpm build --mode production",
     "preview": "vite preview",
     "lint": "eslint src --fix",
     "lint:style": "stylelint **/*.{vue,css,scss} --fix",
