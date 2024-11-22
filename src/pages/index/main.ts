@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import ProdConsole from '@/utils/prod-console'
-import Iconify from '@/utils/iconify'
+import ProdConsole from '@/plugins/prod-console'
+import Iconify from '@/plugins/iconify'
 
 import 'normalize.css'
 import 'virtual:uno.css'

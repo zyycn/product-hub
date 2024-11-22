@@ -4,9 +4,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-import ProdConsole from '@/utils/prod-console'
-import Nprogress from '@/utils/nprogress'
-import Iconify from '@/utils/iconify'
+import ProdConsole from '@/plugins/prod-console'
+import Nprogress from '@/plugins/nprogress'
+import Iconify from '@/plugins/iconify'
 
 import 'normalize.css'
 import './styles/index.scss'
