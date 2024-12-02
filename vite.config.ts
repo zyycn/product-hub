@@ -11,7 +11,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import unoCSS from 'unocss/vite'
 import mpaConfig from './config/mpa-config'
-import commitInfo from './config/commit-info'
+import gitInfoPlugin from './src/plugins/vite-plugin-git-info'
 
 export default defineConfig(({ mode }): UserConfig => {
   const env = loadEnv(mode, process.cwd(), '')
@@ -19,7 +19,7 @@ export default defineConfig(({ mode }): UserConfig => {
     root: process.cwd(),
     base: './',
     define: {
-      __APP_INFO__: JSON.stringify({ ...env, ...commitInfo, PAGES: mpaConfig.pages })
+      __APP_INFO__: JSON.stringify({ ...env, PAGES: mpaConfig.pages })
     },
     resolve: {
       alias: {
@@ -60,7 +60,8 @@ export default defineConfig(({ mode }): UserConfig => {
         stylelint: {
           lintCommand: 'stylelint **/*.{vue,css,scss}'
         }
-      })
+      }),
+      gitInfoPlugin()
     ],
     build: {
       chunkSizeWarningLimit: 2000,
