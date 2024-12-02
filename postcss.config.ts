@@ -1,9 +1,9 @@
-import { sep } from 'path'
+import { sep } from 'node:path'
 import { findIndex } from 'lodash-es'
 import postcssPresetEnv from 'postcss-preset-env'
 import postcssPxtorem from 'postcss-pxtorem'
 
-const adaptivePages = []
+const adaptivePages = ['ops-tools']
 
 export default function () {
   return {

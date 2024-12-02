@@ -1,4 +1,4 @@
-import { resolve } from 'path'
+import { resolve } from 'node:path'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig, loadEnv, UserConfig } from 'vite'
 import checker from 'vite-plugin-checker'
@@ -24,13 +24,6 @@ export default defineConfig(({ mode }): UserConfig => {
     resolve: {
       alias: {
         '@': resolve(__dirname, 'src')
-      }
-    },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern'
-        }
       }
     },
     plugins: [
