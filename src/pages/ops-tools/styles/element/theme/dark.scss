@@ -1,6 +1,6 @@
 @use 'element-plus/theme-chalk/src/dark/css-vars.scss' as *;
 
-html.dark {
+:root.dark {
   --logo-color: #f2f2f2;
   --background-deep: #121212;
   --menu-item-color: #f2f2f2cc;

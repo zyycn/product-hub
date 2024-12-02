@@ -19,7 +19,7 @@ const createLink = (info: { name: string }) => {
       </el-icon>
     </div>
     <el-table
-      class="pos-relative pos-z-2 b b-color-[#f4f4f5] border-rounded-10px b-solid bg-[#fff] text-12px"
+      class="pos-relative pos-z-2 b b-color-[#f4f4f5] border-rounded-10px b-solid bg-[#fff]"
       :data="pages"
       stripe
       size="large"
@@ -52,6 +52,8 @@ const createLink = (info: { name: string }) => {
 
 <style lang="scss" scoped>
 .dev-page {
+  --el-font-size-base: 12px;
+
   &::after {
     position: absolute;
     top: 0;
