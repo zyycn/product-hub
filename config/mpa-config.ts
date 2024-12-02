@@ -1,4 +1,4 @@
-import { program } from 'commander'
+import { Command } from 'commander'
 import { MpaOptions, AllowedEvent } from 'vite-plugin-virtual-mpa'
 import pages from './mpa-entry'
 
@@ -12,7 +12,7 @@ const mpa_options: MpaOptions<string, string, string, AllowedEvent, string> = {
 }
 
 // 命令行参数
-const options = program
+const options = new Command()
   .name('多页面按需构建指令')
   .description('可选参数：-p , --page, 指定打包的页面值为目录名称，多个值用逗号隔开, 例如：-- -p page_a,page_b')
   .allowUnknownOption(true)

@@ -3,7 +3,7 @@ import { findIndex } from 'lodash-es'
 import postcssPresetEnv from 'postcss-preset-env'
 import postcssPxtorem from 'postcss-pxtorem'
 
-const adaptivePages = ['ops-tools']
+const adaptivePages = []
 
 export default function () {
   return {
@@ -14,7 +14,7 @@ export default function () {
         minPixelValue: 0,
         propList: ['*'],
         selectorBlackList: ['unpxtorem', 'html'],
-        exclude: file => {
+        exclude: (file: string) => {
           const filePath = file.split(sep).join('/')
           return findIndex(adaptivePages, page => filePath.includes(page)) === -1
         }

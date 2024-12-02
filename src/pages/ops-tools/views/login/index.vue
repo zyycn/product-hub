@@ -63,7 +63,7 @@ const toggleDark = () => {
     <div class="pos-relative flex-1 bg-[var(--el-bg-color)]">
       <div class="pos-absolute pos-left-50% pos-top-50% w-72% transform-translate--50% px-10px py-10px -mt-60px">
         <div class="mb-30px text-14px">
-          <h1 class="mx-6px">欢迎回来 👋🏻</h1>
+          <h1>欢迎回来 👋🏻</h1>
           <span class="color-[var(--el-text-color-placeholder)]">请输入您的帐户信息以开始您的旅程</span>
         </div>
         <el-config-provider size="large">
