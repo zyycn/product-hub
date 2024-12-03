@@ -17,7 +17,7 @@ const avtiveRoute = computed(() => {
 <template>
   <div class="sidebar pos-relative box-border h-full p-t-40px">
     <div class="logo">
-      <el-icon :size="32">
+      <el-icon class="text-32">
         <iconify-icon icon="unjs:undocs" />
       </el-icon>
       <span v-show="!collapse" class="mx-10px text-nowrap">OPS Tools</span>
@@ -43,6 +43,7 @@ const avtiveRoute = computed(() => {
   --el-menu-sub-item-height: 42px;
   --el-menu-base-level-padding: 10px;
   --el-menu-level-padding: 15px;
+  --el-menu-item-font-size: 14px;
 
   box-sizing: border-box;
   padding: 8px;

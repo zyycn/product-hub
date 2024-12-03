@@ -2,10 +2,9 @@ import { sep } from 'node:path'
 import { findIndex } from 'lodash-es'
 import postcssPresetEnv from 'postcss-preset-env'
 import postcssPxtorem from 'postcss-pxtorem'
+import adaptivePages from './config/mpa-adative-pages'
 
-const adaptivePages = []
-
-export default function () {
+export default () => {
   return {
     plugins: [
       postcssPresetEnv(),
@@ -13,10 +12,10 @@ export default function () {
         rootValue: 16,
         minPixelValue: 0,
         propList: ['*'],
-        selectorBlackList: ['unpxtorem', 'html'],
+        selectorBlackList: ['ignore-', 'html'],
         exclude: (file: string) => {
           const filePath = file.split(sep).join('/')
-          return findIndex(adaptivePages, page => filePath.includes(page)) === -1
+          return findIndex(adaptivePages, (page: string) => filePath.includes(page)) === -1
         }
       })
     ]
