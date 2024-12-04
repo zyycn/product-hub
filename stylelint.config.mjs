@@ -10,7 +10,8 @@ export default {
     'no-descending-specificity': null,
     'declaration-empty-line-before': null,
     'scss/dollar-variable-pattern': '^_?[a-zA-Z0-9\\-]+$',
-    'custom-property-pattern': '^_?[a-zA-Z0-9\\-]+$|^[a-zA-Z0-9\\-]+_[a-zA-Z0-9\\-]+$'
+    'custom-property-pattern': '^_?[a-zA-Z0-9\\-]+$|^[a-zA-Z0-9\\-]+_[a-zA-Z0-9\\-]+$',
+    'scss/at-rule-no-unknown': [true, { ignoreAtRules: ['tailwind'] }]
   },
   overrides: [
     {

@@ -4,18 +4,18 @@ import tips from '@/utils/slack-off-tips'
 
 <template>
   <div class="dashboard">
-    <el-row class="mb-15px">
+    <el-row class="mb-15">
       <el-col :span="24">
         <el-card shadow="never">
-          <div class="flex flex-items-center">
-            <div class="mr-15px">
+          <div class="flex items-center">
+            <div class="mr-15">
               <el-icon :size="50">
                 <iconify-icon icon="openmoji:hacker-cat" />
               </el-icon>
             </div>
-            <div class="flex flex-col flex-justify-center flex-items-start">
-              <span class="mb-10px text-20px fw-bold">{{ tips[0] }}</span>
-              <span class="text-14px color-[var(--el-text-color-secondary)]">
+            <div class="flex flex-col items-start justify-center">
+              <span class="mb-10 text-20 font-bold">{{ tips[0] }}</span>
+              <span class="text-14 text-[var(--el-text-color-secondary)]">
                 {{ tips[1] }} {{ tips[2] }} {{ tips[3] }}
               </span>
             </div>

@@ -2,11 +2,13 @@ import { sep } from 'node:path'
 import { findIndex } from 'lodash-es'
 import postcssPresetEnv from 'postcss-preset-env'
 import postcssPxtorem from 'postcss-pxtorem'
+import tailwindcss from 'tailwindcss'
 import adaptivePages from './config/mpa-adative-pages'
 
 export default () => {
   return {
     plugins: [
+      tailwindcss(),
       postcssPresetEnv(),
       postcssPxtorem({
         rootValue: 16,

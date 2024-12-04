@@ -43,28 +43,26 @@ const toggleDark = () => {
 </script>
 
 <template>
-  <div class="login h-screen w-screen flex select-none overflow-hidden">
-    <div class="pos-relative h-100% w-66% flex-shrink-0">
-      <div class="bg-gradient-154deg pos-absolute pos-left-none pos-top-none h-100% w-100% filter-blur-100px" />
-      <div class="h-100% w-100% flex flex-col justify-center flex-items-center -mt-55px">
-        <img class="user-drag-none animation-float h-256px" src="@/pages/ops-tools/assets/svg/1.svg" alt="icon" />
-        <div class="m-10px text-24px">开箱即用的运维管理系统</div>
-        <div class="text-14px">
-          <p class="mx-4px my-0">
-            这物件嘛，用过了都说还行，倒也无惊无喜，正如世间多数事物，看似平凡，却自有其一分可取
-          </p>
-          <p class="float-right flex flex-items-center -mr-55px">
+  <div class="login flex h-screen w-screen select-none overflow-hidden">
+    <div class="relative h-full w-[66%] flex-shrink-0">
+      <div class="bg-gradient-154deg absolute left-0 top-0 h-full w-full blur-[100]" />
+      <div class="-mt-55 flex h-full w-full flex-col items-center justify-center">
+        <img class="user-drag-none animation-float h-256" src="@/pages/ops-tools/assets/svg/1.svg" alt="icon" />
+        <div class="m-10 text-24">开箱即用的运维管理系统</div>
+        <div class="text-14">
+          <p class="mx-4 my-0">这物件嘛，用过了都说还行，倒也无惊无喜，正如世间多数事物，看似平凡，却自有其一分可取</p>
+          <p class="float-right -mr-55 flex items-center">
             <span>-- 鲁迅</span>
             <iconify-icon icon="twemoji:zany-face" />
           </p>
         </div>
       </div>
     </div>
-    <div class="pos-relative flex-1 bg-[var(--el-bg-color)]">
-      <div class="pos-absolute pos-left-50% pos-top-50% w-72% transform-translate--50% px-10px py-10px -mt-60px">
-        <div class="mb-30px text-14px">
-          <h1>欢迎回来 👋🏻</h1>
-          <span class="color-[var(--el-text-color-placeholder)]">请输入您的帐户信息以开始您的旅程</span>
+    <div class="relative flex-1 bg-[var(--el-bg-color)]">
+      <div class="absolute left-[50%] top-[50%] -mt-60 w-[72%] -translate-x-[50%] -translate-y-[50%] p-10">
+        <div class="mb-30 text-14">
+          <div class="mb-10 text-32 font-bold">欢迎回来 👋🏻</div>
+          <span class="text-[var(--el-text-color-placeholder)]">请输入您的帐户信息以开始您的旅程</span>
         </div>
         <el-config-provider size="large">
           <el-form ref="loginFormRef" :rules="formRules" :model="formData">
@@ -82,14 +80,14 @@ const toggleDark = () => {
               </el-input>
             </el-form-item>
           </el-form>
-          <div class="mb-20px flex flex-justify-between flex-items-center">
+          <div class="mb-20 flex items-center justify-between">
             <el-checkbox>记住密码</el-checkbox>
             <el-link type="primary">忘记密码?</el-link>
           </div>
-          <el-button class="w-100%" type="primary" :loading="submitLoading" @click="handleSubmit"> 登录 </el-button>
+          <el-button class="w-full" type="primary" :loading="submitLoading" @click="handleSubmit"> 登录 </el-button>
           <div class="other-login">
             <el-divider>其它登陆方式</el-divider>
-            <div class="other-login-icon w-100% flex flex-justify-center flex-items-center">
+            <div class="other-login-icon flex w-full items-center justify-center">
               <el-icon :size="16">
                 <iconify-icon icon="simple-icons:github" />
               </el-icon>
@@ -108,18 +106,14 @@ const toggleDark = () => {
       </div>
     </div>
 
-    <div class="pos-absolute pos-left-15px pos-top-15px flex flex-items-center">
+    <div class="absolute left-15 top-15 flex items-center">
       <el-icon :size="40">
         <iconify-icon icon="unjs:undocs" />
       </el-icon>
-      <span class="ml-10px text-22px font-500">OPS Tools</span>
+      <span class="ml-1 text-22 font-bold">OPS Tools</span>
     </div>
 
-    <el-icon
-      class="pos-absolute pos-right-10px pos-top-10px flex cursor-pointer flex-items-center"
-      :size="26"
-      @click="toggleDark"
-    >
+    <el-icon class="absolute right-10 top-10 flex cursor-pointer items-center" :size="26" @click="toggleDark">
       <iconify-icon v-if="!isDark" icon="openmoji:sun" />
       <iconify-icon v-else icon="openmoji:star-and-crescent" />
     </el-icon>

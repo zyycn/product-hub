@@ -12,7 +12,7 @@ const toggleDark = () => {
 </script>
 
 <template>
-  <div class="flex flex-items-center">
+  <div class="flex items-center">
     <el-icon :size="28" @click="toggle">
       <iconify-icon v-if="!isFullscreen" icon="openmoji:toggle-button" />
       <iconify-icon v-else icon="openmoji:toggle-button-state-b" />

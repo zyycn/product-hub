@@ -10,7 +10,7 @@ import Iconify from '@/plugins/iconify'
 
 import 'normalize.css'
 import './styles/index.scss'
-import 'virtual:uno.css'
+import './styles/tailwind.css'
 
 const app = createApp(App)
 

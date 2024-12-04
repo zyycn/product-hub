@@ -7,13 +7,5 @@ export default {
   printWidth: 120,
   proseWrap: 'never',
   endOfLine: 'lf',
-  overrides: [
-    {
-      files: ['*.json5'],
-      options: {
-        quoteProps: 'preserve',
-        singleQuote: false
-      }
-    }
-  ]
+  plugins: ['prettier-plugin-tailwindcss']
 }

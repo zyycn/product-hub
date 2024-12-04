@@ -1,1 +1,1 @@
-export default ['index', 'ops-tools']
+export default ['index']

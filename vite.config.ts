@@ -9,7 +9,6 @@ import unpluginAutoImport from 'unplugin-auto-import/vite'
 import unpluginVueComponents from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import vueDevTools from 'vite-plugin-vue-devtools'
-import unoCSS from 'unocss/vite'
 import mpaConfig from './config/mpa-config'
 import gitRevision from './config/git-revision'
 
@@ -30,7 +29,6 @@ export default defineConfig(({ mode }): UserConfig => {
       vue(),
       vueJsx(),
       vueDevTools(),
-      unoCSS(),
       unpluginAutoImport({
         imports: ['vue', 'vue-router', 'pinia'],
         dts: 'types/auto-imports.d.ts'

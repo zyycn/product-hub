@@ -5,6 +5,5 @@
   },
   "css.validate": false,
   "scss.validate": false,
-  "stylelint.validate": ["vue", "css", "scss"],
-  "unocss.autocomplete.matchType": "fuzzy"
+  "stylelint.validate": ["vue", "css", "scss"]
 }
