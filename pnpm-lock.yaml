@@ -186,9 +186,6 @@ importers:
       vite-plugin-compression:
         specifier: ^0.5.1
         version: 0.5.1(vite@6.0.3(@types/node@22.10.1)(jiti@2.4.1)(sass@1.82.0)(terser@5.37.0)(tsx@4.19.2)(yaml@2.6.1))
-      vite-plugin-require-transform:
-        specifier: ^1.0.21
-        version: 1.0.21
       vite-plugin-virtual-mpa:
         specifier: ^1.12.1
         version: 1.12.1(jiti@2.4.1)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.6.3)(vite@6.0.3(@types/node@22.10.1)(jiti@2.4.1)(sass@1.82.0)(terser@5.37.0)(tsx@4.19.2)(yaml@2.6.1))(yaml@2.6.1)
@@ -4214,9 +4211,6 @@ packages:
     peerDependenciesMeta:
       '@nuxt/kit':
         optional: true
-
-  vite-plugin-require-transform@1.0.21:
-    resolution: {integrity: sha512-A3SrHhVg9tCW35O7E8kcuB71YTEdVd3EaM1zh6gbH4zxy4WzXSfcNf0UiWmaHHhr6wdFhiiAGdpR6S0SUxXkGQ==}
 
   vite-plugin-virtual-mpa@1.12.1:
     resolution: {integrity: sha512-fEdzHIIM1Ax4upVUMHQi5moxkEFuqnrTGJDiK1A5+GLk+mQZRdzH2VkUxRMULV0ajYqM1A7H/zEMb3wKsLqdzA==}
@@ -8604,15 +8598,6 @@ snapshots:
       '@nuxt/kit': 3.14.1592(rollup@4.28.1)
     transitivePeerDependencies:
       - rollup
-      - supports-color
-
-  vite-plugin-require-transform@1.0.21:
-    dependencies:
-      '@babel/generator': 7.26.3
-      '@babel/parser': 7.26.3
-      '@babel/traverse': 7.26.4
-      '@babel/types': 7.26.3
-    transitivePeerDependencies:
       - supports-color
 
   vite-plugin-virtual-mpa@1.12.1(jiti@2.4.1)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.6.3)(vite@6.0.3(@types/node@22.10.1)(jiti@2.4.1)(sass@1.82.0)(terser@5.37.0)(tsx@4.19.2)(yaml@2.6.1))(yaml@2.6.1):
