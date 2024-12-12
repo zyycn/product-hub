@@ -70,14 +70,11 @@ export default defineConfig(({ mode }): UserConfig => {
           chunkFileNames: 'static/js/chunk-[name]-[hash].js',
           entryFileNames: 'static/js/entry-[name]-[hash].js'
         }
-      },
-      minify: 'terser',
-      terserOptions: {
-        compress: {
-          drop_console: ['log', 'warn', 'error'],
-          drop_debugger: true
-        }
       }
+    },
+    esbuild: {
+      pure: ['console.log', 'console.warn', 'console.error'],
+      drop: ['debugger']
     }
   }
 })
