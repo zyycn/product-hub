@@ -5,7 +5,7 @@ const year = dayjs().format('YYYY')
 </script>
 
 <template>
-  <div class="flex h-full w-full items-center justify-center text-12">
+  <div class="flex h-full w-full items-center justify-center text-[12px]">
     <el-icon :size="20">
       <iconify-icon icon="openmoji:cup-with-straw"></iconify-icon>
     </el-icon>

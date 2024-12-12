@@ -1,0 +1,7 @@
+@import 'tailwindcss/preflight' layer(base);
+@import 'tailwindcss/utilities' layer(utilities);
+
+@theme {
+  --spacing: 1px;
+  --font-weight-bold: 700;
+}

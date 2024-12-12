@@ -13,13 +13,13 @@ const createLink = (info: { name: string }) => {
 <template>
   <div class="dev-page relative box-border h-screen w-screen overflow-hidden px-30 pb-10">
     <div class="flex items-center justify-start">
-      <div class="my-14 ml-8 text-22 font-bold">PROJECT PAGES：</div>
+      <div class="my-14 ml-8 text-[22px] font-bold">PROJECT PAGES：</div>
       <el-icon :size="22">
         <iconify-icon icon="twemoji:sparkles" />
       </el-icon>
     </div>
     <el-table
-      class="relative z-[2] rounded-[10px] border border-solid border-[#f4f4f5] bg-[#fff]"
+      class="relative z-2 rounded-[10px] border border-solid border-[#f4f4f5] bg-[#fff]"
       :data="pages"
       stripe
       size="large"
@@ -37,7 +37,7 @@ const createLink = (info: { name: string }) => {
       <el-table-column label="页面地址" show-overflow-tooltip>
         <template #default="scope">
           <div class="flex items-center">
-            <el-icon :size="16" class="mr-5px">
+            <el-icon :size="16" class="mr-5">
               <iconify-icon icon="openmoji:high-voltage" />
             </el-icon>
             <el-link target="_blank" :href="createLink(scope.row)">

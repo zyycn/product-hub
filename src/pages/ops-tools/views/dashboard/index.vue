@@ -14,8 +14,8 @@ import tips from '@/utils/slack-off-tips'
               </el-icon>
             </div>
             <div class="flex flex-col items-start justify-center">
-              <span class="mb-10 text-20 font-bold">{{ tips[0] }}</span>
-              <span class="text-14 text-[var(--el-text-color-secondary)]">
+              <span class="mb-10 text-[20px] font-bold">{{ tips[0] }}</span>
+              <span class="text-[14px] text-[var(--el-text-color-secondary)]">
                 {{ tips[1] }} {{ tips[2] }} {{ tips[3] }}
               </span>
             </div>

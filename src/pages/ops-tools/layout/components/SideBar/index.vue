@@ -17,7 +17,7 @@ const avtiveRoute = computed(() => {
 <template>
   <div class="sidebar relative box-border h-full pt-40">
     <div class="logo">
-      <el-icon class="text-32">
+      <el-icon class="text-[32px]">
         <iconify-icon icon="unjs:undocs" />
       </el-icon>
       <span v-show="!collapse" class="mx-10 text-nowrap">OPS Tools</span>
@@ -123,7 +123,19 @@ const avtiveRoute = computed(() => {
 <style scoped lang="scss">
 .sidebar {
   .logo {
-    @apply absolute left-[50%] top-0 z-[1] flex h-50 translate-x-[-50%] items-center justify-center overflow-hidden text-18 font-[600] text-[var(--logo-color)];
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    overflow: hidden;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--logo-color);
+    transform: translateX(-50%);
   }
 
   :deep(.el-scrollbar) {

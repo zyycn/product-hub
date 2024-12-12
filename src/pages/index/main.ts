@@ -5,7 +5,7 @@ import ProdConsole from '@/plugins/prod-console'
 import Iconify from '@/plugins/iconify'
 
 import 'normalize.css'
-import './styles/tailwind.css'
+import './styles/tailwind/index.css'
 
 const app = createApp(App)
 

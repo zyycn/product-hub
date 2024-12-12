@@ -43,13 +43,13 @@ const toggleDark = () => {
 </script>
 
 <template>
-  <div class="login flex h-screen w-screen select-none overflow-hidden">
+  <div class="login flex h-screen w-screen overflow-hidden select-none">
     <div class="relative h-full w-[66%] flex-shrink-0">
-      <div class="bg-gradient-154deg absolute left-0 top-0 h-full w-full blur-[100]" />
+      <div class="bg-gradient-154deg absolute top-0 left-0 h-full w-full blur-[100]" />
       <div class="-mt-55 flex h-full w-full flex-col items-center justify-center">
         <img class="user-drag-none animation-float h-256" src="@/pages/ops-tools/assets/svg/1.svg" alt="icon" />
-        <div class="m-10 text-24">开箱即用的运维管理系统</div>
-        <div class="text-14">
+        <div class="m-10 text-[24px]">开箱即用的运维管理系统</div>
+        <div class="text-[14px]">
           <p class="mx-4 my-0">这物件嘛，用过了都说还行，倒也无惊无喜，正如世间多数事物，看似平凡，却自有其一分可取</p>
           <p class="float-right -mr-55 flex items-center">
             <span>-- 鲁迅</span>
@@ -59,9 +59,9 @@ const toggleDark = () => {
       </div>
     </div>
     <div class="relative flex-1 bg-[var(--el-bg-color)]">
-      <div class="absolute left-[50%] top-[50%] -mt-60 w-[72%] -translate-x-[50%] -translate-y-[50%] p-10">
-        <div class="mb-30 text-14">
-          <div class="mb-10 text-32 font-bold">欢迎回来 👋🏻</div>
+      <div class="absolute top-[50%] left-[50%] -mt-60 w-[72%] -translate-x-[50%] -translate-y-[50%] p-10">
+        <div class="mb-30 text-[14px]">
+          <div class="mb-10 text-[32px] font-bold">欢迎回来 👋🏻</div>
           <span class="text-[var(--el-text-color-placeholder)]">请输入您的帐户信息以开始您的旅程</span>
         </div>
         <el-config-provider size="large">
@@ -106,14 +106,14 @@ const toggleDark = () => {
       </div>
     </div>
 
-    <div class="absolute left-15 top-15 flex items-center">
+    <div class="absolute top-15 left-15 flex items-center">
       <el-icon :size="40">
         <iconify-icon icon="unjs:undocs" />
       </el-icon>
-      <span class="ml-1 text-22 font-bold">OPS Tools</span>
+      <span class="ml-1 text-[22px] font-bold">OPS Tools</span>
     </div>
 
-    <el-icon class="absolute right-10 top-10 flex cursor-pointer items-center" :size="26" @click="toggleDark">
+    <el-icon class="absolute top-10 right-10 flex cursor-pointer items-center" :size="26" @click="toggleDark">
       <iconify-icon v-if="!isDark" icon="openmoji:sun" />
       <iconify-icon v-else icon="openmoji:star-and-crescent" />
     </el-icon>
