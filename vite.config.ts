@@ -29,7 +29,6 @@ export default defineConfig(({ mode }): UserConfig => {
     plugins: [
       vue(),
       vueJsx(),
-      vueDevTools(),
       tailwindcss(),
       unpluginAutoImport({
         imports: ['vue', 'vue-router', 'pinia'],
@@ -60,7 +59,8 @@ export default defineConfig(({ mode }): UserConfig => {
         stylelint: {
           lintCommand: 'stylelint **/*.{vue,css,scss}'
         }
-      })
+      }),
+      vueDevTools()
     ],
     build: {
       chunkSizeWarningLimit: 2000,
