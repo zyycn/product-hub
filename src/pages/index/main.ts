@@ -4,7 +4,7 @@ import App from './App.vue'
 import ProdConsole from '@/plugins/prod-console'
 import Iconify from '@/plugins/iconify'
 
-import 'normalize.css'
+import 'modern-normalize/modern-normalize.css'
 import './styles/tailwind/index.css'
 
 const app = createApp(App)

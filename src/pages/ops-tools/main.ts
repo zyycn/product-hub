@@ -8,7 +8,7 @@ import ProdConsole from '@/plugins/prod-console'
 import Nprogress from '@/plugins/nprogress'
 import Iconify from '@/plugins/iconify'
 
-import 'normalize.css'
+import 'modern-normalize/modern-normalize.css'
 import './styles/index.scss'
 import './styles/tailwind/index.css'
 
