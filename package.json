@@ -44,7 +44,7 @@
     "@eslint/js": "^9.17.0",
     "@iconify/vue": "^4.2.0",
     "@tailwindcss/vite": "4.0.0-beta.6",
-    "@types/node": "^22.10.2",
+    "@types/node": "^22.10.3",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vitejs/plugin-vue-jsx": "^4.1.1",
     "commander": "^13.0.0",
