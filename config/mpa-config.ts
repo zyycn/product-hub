@@ -17,7 +17,7 @@ const options = new Command()
   .description('可选参数：-p , --page, 指定打包的页面值为目录名称，多个值用逗号隔开, 例如：-- -p page_a,page_b')
   .allowUnknownOption(true)
   .option('-p, --page <value>')
-  .parse(process.argv.slice(2))
+  .parse(process.argv.slice(process.argv.indexOf('--mode') + 1 || process.argv.length))
   .opts()
 
 if (options.page && mpa_options.pages) {
